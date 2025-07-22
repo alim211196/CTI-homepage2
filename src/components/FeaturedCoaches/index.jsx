@@ -11,10 +11,10 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Autoplay } from "swiper/modules";
 import { Facebook, LinkedIn, Instagram } from "@mui/icons-material";
-import image1 from '../../assets/FeaturedCoaches/image1.jpg';
-import image2 from '../../assets/FeaturedCoaches/image2.jpg';
-import image3 from '../../assets/FeaturedCoaches/image3.jpg';
-import image4 from '../../assets/FeaturedCoaches/image4.jpg';
+import image1 from '../../assets/featuredcoaches/image1.jpg';
+import image2 from '../../assets/featuredcoaches/image2.jpg';
+import image3 from '../../assets/featuredcoaches/image3.jpg';
+import image4 from '../../assets/featuredcoaches/image4.jpg';
 const coaches = [
   {
     name: "Polina Kerston",

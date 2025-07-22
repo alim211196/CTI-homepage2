@@ -1,11 +1,11 @@
 import { Box, Typography, Stack, Container } from "@mui/material";
 import { motion } from "framer-motion";
-import shape1 from "../../assets/ValueProposition/shape1.png";
+import shape1 from "../../assets/valueproposition/shape1.png";
 
-import heroImg1 from "../../assets/HeroSection/image1.jpg";
-import heroImg2 from "../../assets/HeroSection/image2.jpg";
-import heroImg3 from "../../assets/HeroSection/image3.jpg";
-import heroImg4 from "../../assets/HeroSection/image4.jpg";
+import heroImg1 from "../../assets/herosection/image1.jpg";
+import heroImg2 from "../../assets/herosection/image2.jpg";
+import heroImg3 from "../../assets/herosection/image3.jpg";
+import heroImg4 from "../../assets/herosection/image4.jpg";
 export const heroLeftVariants = {
   hidden: { x: -80, opacity: 0 },
   visible: {

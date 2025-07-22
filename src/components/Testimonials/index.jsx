@@ -11,14 +11,14 @@ import {
 import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import image1 from "../../assets/Testimonials/image1.jpg";
-import image2 from "../../assets/Testimonials/image2.jpg";
-import image3 from "../../assets/Testimonials/image3.jpg";
-import image4 from "../../assets/Testimonials/image4.jpg";
-import image5 from "../../assets/Testimonials/image5.jpg";
-import image6 from "../../assets/Testimonials/image6.jpg";
-import quoteIcon from "../../assets/Testimonials/quote-icon.svg";
-import bgDots from "../../assets/Testimonials/map-dot.png";
+import image1 from "../../assets/testimonials/image1.jpg";
+import image2 from "../../assets/testimonials/image2.jpg";
+import image3 from "../../assets/testimonials/image3.jpg";
+import image4 from "../../assets/testimonials/image4.jpg";
+import image5 from "../../assets/testimonials/image5.jpg";
+import image6 from "../../assets/testimonials/image6.jpg";
+import quoteIcon from "../../assets/testimonials/quote-icon.svg";
+import bgDots from "../../assets/testimonials/map-dot.png";
 const testimonials = [
   {
     name: "Sara William",

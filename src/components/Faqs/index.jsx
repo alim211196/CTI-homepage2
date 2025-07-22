@@ -10,8 +10,8 @@ import {
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { keyframes } from "@emotion/react";
-import shape1 from '../../assets/Faqs/shape1.svg';
-import image1 from '../../assets/Faqs/image1.png';
+import shape1 from '../../assets/faqs/shape1.svg';
+import image1 from '../../assets/faqs/image1.png';
 const pulseShape = keyframes`
   0%, 100% {
     transform: scale(1);

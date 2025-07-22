@@ -8,11 +8,11 @@ import {
   Container,
 } from "@mui/material";
 import { motion } from "framer-motion";
-import image1 from "../../assets/ValueProposition/image1.png";
-import image2 from "../../assets/ValueProposition/image2.png";
-import image3 from "../../assets/ValueProposition/image3.png";
-import image4 from "../../assets/ValueProposition/image4.png";
-import shape1 from "../../assets/ValueProposition/shape1.png";
+import image1 from "../../assets/valueproposition/image1.png";
+import image2 from "../../assets/valueproposition/image2.png";
+import image3 from "../../assets/valueproposition/image3.png";
+import image4 from "../../assets/valueproposition/image4.png";
+import shape1 from "../../assets/valueproposition/shape1.png";
 
 
 const steps = [
