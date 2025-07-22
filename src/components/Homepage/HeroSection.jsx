@@ -1,6 +1,6 @@
 import { Box, Typography, Stack, Container } from "@mui/material";
 import { motion } from "framer-motion";
-import shape1 from "../../assets/valueproposition/shape1.png";
+import shape1 from "../../assets/ValueProposition/shape1.png";
 
 import heroImg1 from "../../assets/HeroSection/image1.jpg";
 import heroImg2 from "../../assets/HeroSection/image2.jpg";
