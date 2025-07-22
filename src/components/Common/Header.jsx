@@ -26,7 +26,7 @@ import GroupIcon from "@mui/icons-material/Group";
 import ForumIcon from "@mui/icons-material/Forum";
 import HelpIcon from "@mui/icons-material/Help";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
-
+import logo from '../../assets/logo.png';
 const Header = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
@@ -60,7 +60,7 @@ const Header = () => {
             {/* Logo */}
             <Box display="flex" alignItems="center">
               <img
-                src="src/assets/logo.png"
+                src={logo}
                 alt="logo"
                 style={{ marginRight: 8 }}
                 width={180}
