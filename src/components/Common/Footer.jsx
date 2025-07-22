@@ -13,7 +13,7 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
-
+import logo from '../../assets/logo.png';
 const navItems = [
   { label: "About Us", href: "#about-us" },
   { label: "Features", href: "#features" },
@@ -36,7 +36,7 @@ const Footer = () => {
           {/* About */}
           <Grid size={{ xs: 12, sm: 6, md: 3 }}>
             <Box>
-              <img src="src/assets/logo.png" alt="Logo" width={280} />
+              <img src={logo} alt="Logo" width={280} />
               <Typography variant="body2" sx={{ mt: 2 }}>
                 Vivamus porta efficitur nibh nec convallis. Vestibulum egestas
                 eleifend justo. Ut tellus ipsum, accumsan.
