@@ -1,19 +1,26 @@
 import { Box, Container, Typography, Stack } from "@mui/material";
 import { motion } from "framer-motion";
 
+import mapDot from '../assets/testimonials/map-dot.png';
+import earthBg from '../assets/aboutus/earth-bg.svg';
+import image1 from '../assets/aboutus/image1.png';
+import image2 from '../assets/aboutus/image2.jpg';
+import image3 from '../assets/aboutus/image3.jpg';
+
 const AboutUs = () => {
   const MotionBox = motion(Box);
+
   return (
     <Container maxWidth="xl">
       <Box
         sx={{
           py: { xs: 6, md: 8 },
           overflow: "hidden",
-          backgroundImage: "url('/src/assets/testimonials/map-dot.png')",
+          backgroundImage: `url(${mapDot})`,
           backgroundRepeat: "no-repeat",
           backgroundSize: {
-            xs: "cover", // cover full area on small screens
-            sm: "contain", // keep aspect ratio on medium+
+            xs: "cover",
+            sm: "contain",
             md: "contain",
           },
         }}
@@ -38,7 +45,7 @@ const AboutUs = () => {
             {/* Rotating Earth */}
             <MotionBox
               component="img"
-              src="src/assets/aboutus/earth-bg.svg"
+              src={earthBg}
               alt="Earth Background"
               sx={{
                 position: "absolute",
@@ -59,7 +66,7 @@ const AboutUs = () => {
             {/* Main Circle Image */}
             <Box
               component="img"
-              src="src/assets/aboutus/image1.png"
+              src={image1}
               alt="Main"
               sx={{
                 position: "absolute",
@@ -81,7 +88,7 @@ const AboutUs = () => {
             {/* Top Left Small Image */}
             <Box
               component="img"
-              src="src/assets/aboutus/image2.jpg"
+              src={image2}
               alt="Small Left"
               sx={{
                 position: "absolute",
@@ -98,7 +105,7 @@ const AboutUs = () => {
             {/* Bottom Right Small Image */}
             <Box
               component="img"
-              src="src/assets/aboutus/image3.jpg"
+              src={image3}
               alt="Small Right"
               sx={{
                 position: "absolute",
