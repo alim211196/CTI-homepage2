@@ -8,36 +8,44 @@ import {
   Container,
 } from "@mui/material";
 import { motion } from "framer-motion";
+import image1 from "../../assets/valueproposition/image1.png";
+import image2 from "../../assets/valueproposition/image2.png";
+import image3 from "../../assets/valueproposition/image3.png";
+import image4 from "../../assets/valueproposition/image4.png";
+import shape1 from "../../assets/valueproposition/shape1.png";
+
+
 const steps = [
   {
-    icon: "src/assets/valueproposition/image1.png",
+    icon: image1,
     title: "Search for Tutors",
     desc: "Post Tuition by creating Account or without Account.",
     bg: "#fce2978a",
     dark_bg: "neutral.main",
   },
   {
-    icon: "src/assets/valueproposition/image2.png",
+    icon: image2,
     title: "Get Free Session",
     desc: "Get free one day demo session with the tutor...",
     bg: "#ff4a39a9",
     dark_bg: "secondary.main",
   },
   {
-    icon: "src/assets/valueproposition/image3.png",
+    icon: image3,
     title: "Hire your tutor",
     desc: "If you like the demo session, confirm the teacher.",
     bg: "#ff4a39a9",
     dark_bg: "secondary.main",
   },
   {
-    icon: "src/assets/valueproposition/image4.png",
+    icon: image4,
     title: "Get results",
     desc: "Gain knowledge, boost confidence and improve...",
     bg: "#fce2978a",
     dark_bg: "neutral.main",
   },
 ];
+
 
 const ValueProposition = () => {
   return (
@@ -193,7 +201,7 @@ const ValueProposition = () => {
             {/* Shape animation at the end */}
             <Box
               component="img"
-              src="src/assets/valueproposition/shape1.png"
+              src={shape1}
               alt="Shape"
               loading="lazy"
               sx={{

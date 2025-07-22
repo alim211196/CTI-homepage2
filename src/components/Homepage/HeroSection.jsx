@@ -1,6 +1,11 @@
 import { Box, Typography, Stack, Container } from "@mui/material";
 import { motion } from "framer-motion";
+import shape1 from "../../assets/valueproposition/shape1.png";
 
+import heroImg1 from "../../assets/herosection/image1.jpg";
+import heroImg2 from "../../assets/herosection/image2.jpg";
+import heroImg3 from "../../assets/herosection/image3.jpg";
+import heroImg4 from "../../assets/herosection/image4.jpg";
 export const heroLeftVariants = {
   hidden: { x: -80, opacity: 0 },
   visible: {
@@ -61,7 +66,7 @@ const HeroSection = () => {
                 {/* SHAPE: zIndex 0 */}
                 <Box
                   component="img"
-                  src="src/assets/valueproposition/shape1.png"
+                  src={shape1}
                   alt="Shape"
                   sx={{
                     position: "absolute",
@@ -134,28 +139,28 @@ const HeroSection = () => {
                 {/* Circle Images */}
                 {[
                   {
-                    src: "src/assets/herosection/image1.jpg",
+                    src: heroImg1,
                     top: { xs: "-10%", md: "-10%" },
                     left: { xs: "-15%", md: "-15%" },
                     width: { xs: 160, sm: 200, md: 250 },
                     height: { xs: 160, sm: 200, md: 250 },
                   },
                   {
-                    src: "src/assets/herosection/image2.jpg",
+                    src: heroImg2,
                     top: "25%",
                     right: { xs: "-10%", md: "-9%" },
                     width: { xs: 130, sm: 170, md: 200 },
                     height: { xs: 130, sm: 170, md: 200 },
                   },
                   {
-                    src: "src/assets/herosection/image3.jpg",
+                    src: heroImg3,
                     bottom: "-10%",
                     left: { xs: "-10%", md: "-10%" },
                     width: { xs: 100, sm: 120, md: 150 },
                     height: { xs: 100, sm: 120, md: 150 },
                   },
                   {
-                    src: "src/assets/herosection/image4.jpg",
+                    src: heroImg4,
                     bottom: "-25%",
                     right: { xs: "5%", md: "15%" },
                     width: { xs: 80, sm: 90, md: 100 },

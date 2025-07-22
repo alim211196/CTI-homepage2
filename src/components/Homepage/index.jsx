@@ -10,7 +10,7 @@ import FeaturedCoaches from "../FeaturedCoaches";
 import Testimonials from "../Testimonials";
 import Faqs from "../Faqs";
 import Newsletter from "../Newsletter";
-
+import bannerBg from "../../assets/banner-bg.png";
 const Homepage = () => {
   return (
     <>
@@ -26,7 +26,7 @@ const Homepage = () => {
             right: 0,
             bottom: 0,
             left: 0,
-            backgroundImage: "url('/src/assets/banner-bg.png')",
+            backgroundImage: `url(${bannerBg})`,
             backgroundRepeat: "no-repeat",
             backgroundSize: {
               xs: "cover", // cover full area on small screens

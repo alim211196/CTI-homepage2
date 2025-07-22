@@ -4,7 +4,16 @@ import WorkspacePremiumIcon from "@mui/icons-material/WorkspacePremium";
 import EmojiObjectsIcon from "@mui/icons-material/EmojiObjects";
 import SupportAgentIcon from "@mui/icons-material/SupportAgent";
 import { motion } from "framer-motion";
-
+import image1 from "../../assets/features/image1.jpg";
+import image2 from "../../assets/features/image2.jpg";
+import image3 from "../../assets/features/image3.jpg";
+import image4 from "../../assets/features/image4.jpg";
+import image5 from "../../assets/features/image5.jpg";
+import image6 from "../../assets/features/image6.jpg";
+import image7 from "../../assets/features/image7.jpg";
+import image8 from "../../assets/features/image8.jpg";
+import image9 from "../../assets/features/image9.jpg";
+import image10 from "../../assets/features/image10.jpg";
 // Animation Variants
 const containerVariants = {
   hidden: {},
@@ -53,16 +62,16 @@ const platform_features = [
 ];
 
 const imageGrid = [
-  "src/assets/features/image1.jpg",
-  "src/assets/features/image2.jpg",
-  "src/assets/features/image3.jpg",
-  "src/assets/features/image4.jpg",
-  "src/assets/features/image5.jpg",
-  "src/assets/features/image6.jpg",
-  "src/assets/features/image7.jpg",
-  "src/assets/features/image8.jpg",
-  "src/assets/features/image9.jpg",
-  "src/assets/features/image10.jpg",
+  image1,
+  image2,
+  image3,
+  image4,
+  image5,
+  image6,
+  image7,
+  image8,
+  image9,
+  image10,
 ];
 
 const imgStyle = {

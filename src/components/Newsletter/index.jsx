@@ -7,7 +7,7 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-
+import newsBg from "../../assets/news-bg.png";
 const Newsletter = () => {
   return (
     <Container maxWidth="xl" sx={{ mb: -20 }}>
@@ -27,7 +27,7 @@ const Newsletter = () => {
             left: 0,
             width: 100,
             height: 100,
-            backgroundImage: "url('src/assets/news-bg.png')",
+            backgroundImage: `url(${newsBg})`,
             backgroundSize: "contain",
             backgroundRepeat: "no-repeat",
             zIndex: 1,

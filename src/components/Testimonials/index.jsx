@@ -11,45 +11,53 @@ import {
 import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
+import image1 from "../../assets/testimonials/image1.jpg";
+import image2 from "../../assets/testimonials/image2.jpg";
+import image3 from "../../assets/testimonials/image3.jpg";
+import image4 from "../../assets/testimonials/image4.jpg";
+import image5 from "../../assets/testimonials/image5.jpg";
+import image6 from "../../assets/testimonials/image6.jpg";
+import quoteIcon from "../../assets/testimonials/quote-icon.svg";
+import bgDots from "../../assets/testimonials/map-dot.png";
 const testimonials = [
   {
     name: "Sara William",
     role: "Content Writing",
-    image: "src/assets/testimonials/image1.jpg",
+    image: image1,
     text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed di nonumy eirmod tempor invidunt ut labore et dolor magn aliq erat.",
   },
   {
     name: "Elena Swift",
     role: "SEO Specialist",
-    image: "src/assets/testimonials/image2.jpg",
+    image: image2,
     text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed di nonumy eirmod tempor labore et dolore magna.",
   },
   {
     name: "John Doe",
     role: "SEO Specialist",
-    image: "src/assets/testimonials/image3.jpg",
+    image: image3,
     text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed di nonumy eirmod tempor labore et dolore magna.",
   },
   {
     name: "Lisa William",
     role: "Content Writing",
-    image: "src/assets/testimonials/image4.jpg",
+    image: image4,
     text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed di nonumy eirmod tempor invidunt ut labore et dolor magn aliq erat.",
   },
   {
     name: "Josh Swift",
     role: "SEO Specialist",
-    image: "src/assets/testimonials/image5.jpg",
+    image: image5,
     text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed di nonumy eirmod tempor labore et dolore magna.",
   },
   {
     name: "Stella Doe",
     role: "SEO Specialist",
-    image: "src/assets/testimonials/image6.jpg",
+    image: image6,
     text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed di nonumy eirmod tempor labore et dolore magna.",
   },
 ];
+
 
 const NextArrow = (props) => {
   const { onClick } = props;
@@ -123,7 +131,7 @@ const Testimonials = () => {
         sx={{
           py: { xs: 8, md: 10 },
           overflow: "hidden",
-          backgroundImage: "url('/src/assets/testimonials/map-dot.png')",
+          backgroundImage: `url(${bgDots})`,
           backgroundRepeat: "no-repeat",
           backgroundSize: {
             xs: "cover", // cover full area on small screens
@@ -157,7 +165,7 @@ const Testimonials = () => {
               <Box key={index} px={2}>
                 <Box textAlign="center" sx={{ maxWidth: 800, mx: "auto" }}>
                   <img
-                    src="src/assets/testimonials/quote-icon.svg"
+                    src={quoteIcon}
                     alt="Quote"
                     style={{ width: 40, margin: "auto" }}
                   />

@@ -11,49 +11,53 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Autoplay } from "swiper/modules";
 import { Facebook, LinkedIn, Instagram } from "@mui/icons-material";
-
+import image1 from '../../assets/featuredcoaches/image1.jpg';
+import image2 from '../../assets/featuredcoaches/image2.jpg';
+import image3 from '../../assets/featuredcoaches/image3.jpg';
+import image4 from '../../assets/featuredcoaches/image4.jpg';
 const coaches = [
   {
     name: "Polina Kerston",
     role: "English coach",
-    image: "src/assets/featuredcoaches/image1.jpg",
+    image: image1,
   },
   {
     name: "Faadi Al Rahman",
     role: "Instructor",
-    image: "src/assets/featuredcoaches/image2.jpg",
+    image: image2,
   },
   {
     name: "Chikelu Obasea",
     role: "Art coach",
-    image: "src/assets/featuredcoaches/image3.jpg",
+    image: image3,
   },
   {
     name: "Katayama Fumiki",
-    role: "coach",
-    image: "src/assets/featuredcoaches/image4.jpg",
+    role: "Coach",
+    image: image4,
   },
   {
     name: "Polina Kerston2",
     role: "English coach",
-    image: "src/assets/featuredcoaches/image1.jpg",
+    image: image1,
   },
   {
     name: "Faadi Al Rahman2",
     role: "Instructor",
-    image: "src/assets/featuredcoaches/image2.jpg",
+    image: image2,
   },
   {
     name: "Chikelu Obasea2",
     role: "Art coach",
-    image: "src/assets/featuredcoaches/image3.jpg",
+    image: image3,
   },
   {
     name: "Katayama Fumiki2",
-    role: "coach",
-    image: "src/assets/featuredcoaches/image4.jpg",
+    role: "Coach",
+    image: image4,
   },
 ];
+
 
 const FeaturedCoaches = () => {
   return (

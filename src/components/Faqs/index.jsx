@@ -10,7 +10,8 @@ import {
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { keyframes } from "@emotion/react";
-
+import shape1 from '../../assets/faqs/shape1.svg';
+import image1 from '../../assets/faqs/image1.png';
 const pulseShape = keyframes`
   0%, 100% {
     transform: scale(1);
@@ -65,7 +66,7 @@ const Faqs = () => {
             {/* Background shape */}
             <Box
               component="img"
-              src="src/assets/faqs/shape1.svg"
+              src={shape1}
               alt="Shape"
               sx={{
                 position: "absolute",
@@ -82,7 +83,7 @@ const Faqs = () => {
             {/* Foreground image */}
             <Box
               component="img"
-              src="src/assets/faqs/image1.png"
+              src={image1}
               alt="Foreground"
               sx={{
                 position: "absolute",
