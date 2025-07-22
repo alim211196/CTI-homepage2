@@ -2,10 +2,10 @@ import { Box, Container, Typography, Stack } from "@mui/material";
 import { motion } from "framer-motion";
 
 import mapDot from '../../assets/testimonials/map-dot.png';
-import earthBg from '../assets/aboutus/earth-bg.svg';
-import image1 from '../assets/aboutus/image1.png';
-import image2 from '../assets/aboutus/image2.jpg';
-import image3 from '../assets/aboutus/image3.jpg';
+import earthBg from '../../assets/aboutus/earth-bg.svg';
+import image1 from '../../assets/aboutus/image1.png';
+import image2 from '../../assets/aboutus/image2.jpg';
+import image3 from '../../assets/aboutus/image3.jpg';
 
 const AboutUs = () => {
   const MotionBox = motion(Box);
