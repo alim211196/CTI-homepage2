@@ -1,266 +1,283 @@
 import { Box, Typography, Stack, Container } from "@mui/material";
 import { motion } from "framer-motion";
 import shape1 from "../../assets/valueproposition/shape1.png";
+import React, { useEffect, useState } from "react";
+import heroImg1 from "../../assets/herosection/img1.jpg";
+import heroImg2 from "../../assets/herosection/img2.jpg";
+import heroImg3 from "../../assets/herosection/img3.jpg";
+import heroImg4 from "../../assets/herosection/img4.jpg";
 
-import heroImg1 from "../../assets/herosection/image1.jpg";
-import heroImg2 from "../../assets/herosection/image2.jpg";
-import heroImg3 from "../../assets/herosection/image3.jpg";
-import heroImg4 from "../../assets/herosection/image4.jpg";
-export const heroLeftVariants = {
-  hidden: { x: -80, opacity: 0 },
+// Slide-in for left content
+const heroLeftVariants = {
+  hidden: {
+    opacity: 0,
+    x: -100, // start slightly off-screen to the left
+  },
   visible: {
-    x: 0,
     opacity: 1,
+    x: 0,
     transition: {
-      duration: 0.8,
-      ease: [0.43, 0.13, 0.23, 0.96], // custom ease like cubic-bezier
+      type: "tween", // smoother than spring for UI text
+      duration: 1.5, // increase duration for slower animation
+      ease: "easeInOut", // ease-in-out for smoother motion
     },
   },
 };
 
-export const heroRightVariants = {
-  hidden: { x: 100, y: 100, opacity: 0, scale: 0.95 },
+// Zoom-in for right content
+const heroRightVariants = {
+  hidden: { scale: 0.8, opacity: 0 },
   visible: {
-    x: 0,
-    y: 0,
-    opacity: 1,
     scale: 1,
+    opacity: 1,
     transition: {
-      duration: 0.8,
-      ease: [0.43, 0.13, 0.23, 0.96], // custom ease like cubic-bezier
+      duration: 1.8, // increased duration for slower effect
+      ease: [0.25, 0.1, 0.25, 1], // smoother easing (easeInOut)
     },
   },
 };
+
 
 const HeroSection = () => {
+
+  const words = ["Anything", "Leadership"];
+  const [currentWordIndex, setCurrentWordIndex] = useState(0);
+  const [displayText, setDisplayText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const currentWord = words[currentWordIndex];
+    let timeout;
+    if (isDeleting) {
+      timeout = setTimeout(() => {
+        setDisplayText((prev) => prev.slice(0, -1));
+      }, 200 / 2);
+    } else {
+      timeout = setTimeout(() => {
+        setDisplayText(currentWord.slice(0, displayText.length + 1));
+      }, 200);
+    }
+    if (!isDeleting && displayText === currentWord) {
+      // Pause before deleting
+      timeout = setTimeout(() => setIsDeleting(true), 1000);
+    } else if (isDeleting && displayText === "") {
+      // Move to next word
+      setIsDeleting(false);
+      setCurrentWordIndex((prev) => (prev + 1) % words.length);
+    }
+
+    return () => clearTimeout(timeout);
+  }, [displayText, isDeleting]);
+
+
   return (
-    <Container maxWidth="xl">
-      <Box sx={{ px: 3, py: { xs: 8, md: 8 } }} mb={5}>
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
-          viewport={{ once: true }}
+    <Container maxWidth="lg">
+      <style>
+        {`
+          @keyframes floatBubble {
+            0% { transform: translateY(0) scale(1); opacity: 0.4; }
+            50% { transform: translateY(-20px) scale(1.1); opacity: 0.6; }
+            100% { transform: translateY(0) scale(1); opacity: 0.4; }
+          }
+
+          @keyframes pulseShape {
+            0% { transform: scale(1); opacity: 0.9; }
+            50% { transform: scale(1.05); opacity: 0.6; }
+            100% { transform: scale(1); opacity: 0.9; }
+          }
+        `}
+      </style>
+
+      <Box sx={{ px: 3, py: { xs: 8, md: 10 } }}>
+        <Stack
+          direction={{ xs: "column", md: "row" }}
+          spacing={6}
+          alignItems="center"
+          justifyContent="space-between"
         >
-          <Stack
-            direction={{ xs: "column", md: "row" }}
-            spacing={6}
-            alignItems="center"
-            justifyContent="space-between"
+          {/* Left Content */}
+          <motion.div
+            variants={heroLeftVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
           >
-            {/* --- Left Content --- */}
-            <motion.div
-              layout
-              variants={heroLeftVariants}
-              initial={false}
-              animate="visible"
-              viewport={{ once: true, amount: 0.4 }}
+            <Box
+              sx={{
+                position: "relative",
+                maxWidth: { xs: "100%", md: 570 },
+                textAlign: { xs: "center", md: "left" },
+              }}
             >
               <Box
+                component="img"
+                src={shape1}
+                alt="Shape"
                 sx={{
-                  position: "relative", // enable relative positioning for inner absolute elements
-                  maxWidth: { xs: "100%", md: 550 },
-                  textAlign: { xs: "center", md: "left" },
+                  position: "absolute",
+                  bottom: "-110px",
+                  left: -20,
+                  width: 100,
+                  height: 100,
+                  animation: "pulseShape 3s infinite ease-in-out",
+                  zIndex: 0,
+                  opacity: 0.9,
                 }}
-              >
-                {/* SHAPE: zIndex 0 */}
-                <Box
-                  component="img"
-                  src={shape1}
-                  alt="Shape"
+              />
+              <Box sx={{ position: "relative", zIndex: 1 }}>
+                <Typography
+                  variant="h2"
                   sx={{
-                    position: "absolute",
-                    bottom: "155px",
-                    left: -20,
-                    width: 100,
-                    height: 100,
-                    animation: "pulseShape 3s infinite ease-in-out",
-                    zIndex: 0,
-                    opacity: 0.9,
+                    fontWeight: 600,
+                    lineHeight: 1.2,
+                    fontSize: {
+                      xs: "2rem",
+                      sm: "2.5rem",
+                      md: "3rem",
+                    },
                   }}
-                />
-
-                {/* TEXT: zIndex 1 */}
-                <Box sx={{ position: "relative", zIndex: 1 }}>
-                  <Typography
-                    variant="h3"
-                    sx={{
-                      fontWeight: 600,
-                      lineHeight: 1.2,
-                      fontSize: { xs: "2rem", sm: "2.5rem", md: "3rem" },
-                    }}
-                  >
-                    The Smarter Way to Learn{" "}
-                    <Box
-                      component="span"
-                      sx={{
-                        color: "secondary.main",
-                        textDecoration: "underline",
-                      }}
-                    >
-                      Anything
-                    </Box>
-                  </Typography>
-
-                  <Typography
-                    sx={{
-                      mt: 3,
-                      color: "text.secondary",
-                      lineHeight: 1.8,
-                      fontSize: { xs: "0.95rem", md: "1rem" },
-                    }}
-                  >
-                    Mauris malesuada enim eget blandit gravida. Duis hendrerit
-                    cursus turpis, id mollis est rutrum nec. Sed interdum nisi
-                    id libero tincidunt, sit amet vestibulum tortor porttitor.
-                  </Typography>
-                </Box>
-              </Box>
-            </motion.div>
-
-            {/* --- Right Content --- */}
-            <motion.div
-              layout
-              variants={heroRightVariants}
-              initial={false}
-              animate="visible"
-              viewport={{ once: true, amount: 0.4 }}
-            >
-              <Box
-                sx={{
-                  position: "relative",
-                  minHeight: { xs: 320, md: 400 },
-                  width: { xs: 280, sm: 320, md: 380 },
-                  height: { xs: 280, sm: 320, md: 380 },
-                  borderRadius: "50%",
-                  mx: "auto",
-                }}
-              >
-                {/* Circle Images */}
-                {[
-                  {
-                    src: heroImg1,
-                    top: { xs: "-10%", md: "-10%" },
-                    left: { xs: "-15%", md: "-15%" },
-                    width: { xs: 160, sm: 200, md: 250 },
-                    height: { xs: 160, sm: 200, md: 250 },
-                  },
-                  {
-                    src: heroImg2,
-                    top: "25%",
-                    right: { xs: "-10%", md: "-9%" },
-                    width: { xs: 130, sm: 170, md: 200 },
-                    height: { xs: 130, sm: 170, md: 200 },
-                  },
-                  {
-                    src: heroImg3,
-                    bottom: "-10%",
-                    left: { xs: "-10%", md: "-10%" },
-                    width: { xs: 100, sm: 120, md: 150 },
-                    height: { xs: 100, sm: 120, md: 150 },
-                  },
-                  {
-                    src: heroImg4,
-                    bottom: "-25%",
-                    right: { xs: "5%", md: "15%" },
-                    width: { xs: 80, sm: 90, md: 100 },
-                    height: { xs: 80, sm: 90, md: 100 },
-                  },
-                ].map((item, index) => (
+                >
+                  The Smarter Way to Learn{" "}
                   <Box
-                    key={index}
-                    component="img"
-                    src={item.src}
-                    alt={`Hero ${index}`}
+                    component="span"
                     sx={{
+                      color: "secondary.main",
+                      textDecoration: "underline",
+                      fontWeight: "bold",
+                      fontSize: {
+                        xs: "2rem",
+                        sm: "2.5rem",
+                        md: "3rem",
+                      },
+                      display: "inline-block",
+                      minHeight: "2rem", // keeps space consistent
+                    }}
+                  >
+                    <motion.span
+                      key={displayText}
+                      initial={{ opacity: 0.4 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      {displayText}
+                      <motion.span
+                        animate={{
+                          opacity: [0, 1],
+                        }}
+                        transition={{
+                          repeat: Infinity,
+                          duration: 1,
+                          ease: "easeInOut",
+                        }}
+                      >
+                        |
+                      </motion.span>
+                    </motion.span>
+                  </Box>
+                </Typography>
+
+                <Typography
+                  sx={{
+                    mt: 3,
+                    color: "text.secondary",
+                    lineHeight: 1.8,
+                    fontSize: { xs: "0.95rem", md: "1rem" },
+                  }}
+                >
+                  Mauris malesuada enim eget blandit gravida. Duis hendrerit
+                  cursus turpis, id mollis est rutrum nec. Sed interdum nisi id
+                  libero tincidunt, sit amet vestibulum tortor porttitor.
+                </Typography>
+              </Box>
+            </Box>
+          </motion.div>
+
+          {/* Right Content */}
+          <motion.div
+            variants={heroRightVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+          >
+            <Box
+              sx={{
+                position: "relative",
+                width: { xs: 300, sm: 350, md: 400 },
+                height: { xs: 300, sm: 350, md: 400 },
+                mx: "auto",
+              }}
+            >
+              {/* Floating Circular Images */}
+              {[heroImg1, heroImg2, heroImg3, heroImg4].map((src, index) => {
+                const positions = [
+                  { top: "-10%", left: "-5%" },
+                  { top: "42%", right: "-14%" },
+                  { bottom: "5%", left: "-15%" },
+                  { bottom: "-18%", right: "50%" },
+                ];
+                const sizes = [250, 200, 150, 100];
+                return (
+                  <motion.img
+                    key={index}
+                    src={src}
+                    alt={`Hero ${index}`}
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ duration: 0.3 }}
+                    style={{
                       position: "absolute",
                       borderRadius: "50%",
                       objectFit: "cover",
-                      ...item,
+                      width: sizes[index],
+                      height: sizes[index],
+                      zIndex: 1000,
+                      ...positions[index],
+                      // boxShadow: "0 4px 15px rgba(0,0,0,0.3)",
+                      transition: "transform 0.5s ease-in-out",
                     }}
                   />
-                ))}
+                );
+              })}
 
-                {/* Floating Dots */}
-                {[
-                  ...[
-                    {
-                      top: "-15%",
-                      right: "10%",
-                      bgcolor: "primary.light",
-                      width: { xs: 50, md: 80 },
-                      height: { xs: 50, md: 80 },
-                      animationDelay: "0s",
-                    },
-                    {
-                      top: "30%",
-                      right: "35%",
-                      bgcolor: "primary.main",
-                      width: 40,
-                      height: 40,
-                      animationDelay: "1s",
-                    },
-                    {
-                      top: "30%",
-                      left: "-40%",
-                      bgcolor: "primary.light",
-                      width: 40,
-                      height: 40,
-                      animationDelay: "2s",
-                    },
-                    {
-                      top: "-10%",
-                      left: "-70%",
-                      bgcolor: "secondary.main",
-                      width: 50,
-                      height: 50,
-                      animationDelay: "0.5s",
-                    },
-                    {
-                      bottom: "-25%",
-                      left: "35%",
-                      bgcolor: "secondary.main",
-                      width: 50,
-                      height: 50,
-                      animationDelay: "1.5s",
-                    },
-                  ],
-                  ...[
-                    {
-                      bottom: "-10%",
-                      left: "-70%",
-                      bgcolor: "neutral.main",
-                      width: 60,
-                      height: 60,
-                      animationDelay: "1s",
-                    },
-                    {
-                      bottom: "20%",
-                      left: "40%",
-                      bgcolor: "neutral.light",
-                      width: 45,
-                      height: 45,
-                      animationDelay: "0.5s",
-                    },
-                  ],
-                ].map((item, index) => (
+              {/* Floating Bubbles */}
+              {[...Array(6)].map((_, index) => {
+                const bubbles = [
+                  { top: "60%", left: "30%" },
+                  { top: "25%", right: "25%" },
+                  { bottom: "-35%", left: "30%" },
+                  { bottom: "5%", right: "10%" },
+                  { bottom: "-20%", left: "-30%" },
+                  { top: "-10%", right: "-10%" },
+                ];
+                const sizes = [75, 50, 35, 25, 50, 100];
+                const colors = [
+                  "primary.light",
+                  "primary.main",
+                  "secondary.main",
+                  "text.secondary",
+                  "info.main",
+                  "warning.main",
+                ];
+                return (
                   <Box
                     key={index}
                     sx={{
-                      ...item,
                       position: "absolute",
                       borderRadius: "50%",
-                      animation: "pulseShape 5s ease-in-out infinite alternate",
-                      opacity: 0.8,
-                      animationDelay: item.animationDelay,
-                      willChange: "transform",
+                      backgroundColor: colors[index],
+                      width: sizes[index],
+                      height: sizes[index],
+                      opacity: 0.4,
+                      zIndex: 0,
+                      animation: "floatBubble 6s ease-in-out infinite",
+                      animationDelay: `${index * 0.5}s`,
+                      ...bubbles[index],
                     }}
                   />
-                ))}
-              </Box>
-            </motion.div>
-          </Stack>
-        </motion.div>
+                );
+              })}
+            </Box>
+          </motion.div>
+        </Stack>
       </Box>
     </Container>
   );

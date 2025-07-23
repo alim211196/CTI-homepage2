@@ -9,17 +9,9 @@ import {
   Stack,
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import { keyframes } from "@emotion/react";
-import shape1 from '../../assets/Faqs/shape1.svg';
-import image1 from '../../assets/Faqs/image1.png';
-const pulseShape = keyframes`
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-  }
-`;
+import shape1 from "../../assets/Faqs/shape.svg";
+import image1 from "../../assets/Faqs/2.png";
+import { motion } from "framer-motion";
 
 const faqs_content = [
   {
@@ -41,79 +33,108 @@ const faqs_content = [
 
 const Faqs = () => {
   return (
-    <Container maxWidth="xl">
-      <Box
-        sx={{
-          py: { xs: 6, md: 8 },
-        }}
-      >
+    <Container maxWidth="lg">
+      <Box sx={{ py: { xs: 6, md: 8 } }}>
         <Stack
           direction={{ xs: "column", md: "row" }}
           spacing={6}
           alignItems="center"
           justifyContent="space-between"
         >
-          {/* Left Image Section */}
+          {/* Left Image Section with animation */}
           <Box
+            component={motion.div}
+            initial={{ y: 60, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}
             sx={{
               flex: 1,
               width: "100%",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
               position: "relative",
               minHeight: { xs: 380, sm: 480, md: 520 },
               mb: { xs: 4, md: 0 },
             }}
           >
-            {/* Background shape */}
             <Box
-              component="img"
-              src={shape1}
-              alt="Shape"
-              sx={{
-                position: "absolute",
-                width: { xs: "500px", sm: "650px", md: "800px" },
-                height: "auto",
-                animation: `${pulseShape} 3s infinite ease-in-out`,
-                zIndex: 0,
-                borderRadius: "5%",
-                left: { xs: "-45px", sm: 0, md: "15%" },
-                top: { xs: 0, sm: 0, md: "-25%" },
-              }}
-            />
-
-            {/* Foreground image */}
-            <Box
-              component="img"
-              src={image1}
-              alt="Foreground"
-              sx={{
-                position: "absolute",
-                width: { xs: "130%", sm: "103%", md: "130%" },
-                height: "auto",
-                animation: `${pulseShape} 3s infinite ease-in-out`,
-                zIndex: 1,
-                borderRadius: "5%",
-                left: { xs: 0, sm: 0, md: "31%" },
-                top: { xs: "33px", sm: 0, md: "-12%" },
-              }}
-            />
+              component={motion.div}
+              animate={{ y: [0, -10, 0] }}
+              transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+              sx={{ position: "relative", width: "100%" }}
+            >
+              <Box
+                component="img"
+                src={shape1}
+                alt="Shape"
+                sx={{
+                  width: "100%",
+                  height: "auto",
+                  zIndex: 0,
+                  borderRadius: "5%",
+                  position: "absolute",
+                  top: 178,
+                  left: 0,
+                }}
+              />
+              <Box
+                component="img"
+                src={image1}
+                alt="Foreground"
+                sx={{
+                  width: "100%",
+                  height: "auto",
+                  zIndex: 1,
+                  position: "relative",
+                  borderRadius: "5%",
+                }}
+              />
+            </Box>
           </Box>
 
-          {/* Right Text Content */}
-          <Box sx={{ flex: 1, zIndex: 2, width: "100%" }}>
+          {/* Right Text Content with animation */}
+          <Box
+            component={motion.div}
+            initial={{ x: 80, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}
+            sx={{ flex: 1, zIndex: 2, width: "100%" }}
+          >
             <Stack spacing={2}>
               <Box sx={{ pl: { md: 6 }, mb: 4 }}>
                 <Typography
-                  variant="h6"
+                  variant="body2"
                   sx={{
                     color: "primary.light",
+                    fontWeight: 600,
+                    textDecoration: "underline",
+                    fontSize: {
+                      xs: "0.9rem",
+                      sm: "1rem",
+                      md: "1.05rem",
+                      lg: "1.125rem",
+                    },
+                    transition: "all 0.3s ease",
+                    cursor: "pointer",
+                    display: "inline-block",
+                    "&:hover": {
+                      color: "primary.main",
+                      textShadow: "0 1px 3px rgba(0,0,0,0.2)",
+                      transform: "scale(1.05)",
+                      textDecoration: "none",
+                    },
                   }}
-                  gutterBottom
                 >
                   Frequently Ask Questions
                 </Typography>
+
                 <Typography variant="h4" fontWeight={600} gutterBottom>
                   Do you have questions?
                 </Typography>
+
                 <Typography variant="body1" color="text.secondary" mb={4}>
                   There are many variations of passages of Lorem Ipsum
                   available, but the majority have suffered alteration in some
@@ -123,7 +144,12 @@ const Faqs = () => {
                 {faqs_content.map((faq, idx) => (
                   <Accordion
                     key={idx}
-                    sx={{ mb: 2 }}
+                    elevation={0}
+                    sx={{
+                      mb: 2,
+                      boxShadow: "0 4px 14px rgba(250, 204, 194, 0.4)",
+                      border: "none",
+                    }}
                     defaultExpanded={idx === 0}
                   >
                     <AccordionSummary expandIcon={<ExpandMoreIcon />}>
@@ -142,14 +168,24 @@ const Faqs = () => {
                     variant="contained"
                     sx={{
                       color: "white",
-                      backgroundColor: "primary.light",
-                      borderRadius: 999,
+                      background: "linear-gradient(90deg, #FF6A5B 0%, #FF914D 100%)",
+                      borderRadius: "999px",
                       px: 4,
                       py: 1.2,
                       fontWeight: 600,
+                      fontSize: {
+                        xs: "0.95rem",
+                        sm: "1rem",
+                      },
                       textTransform: "none",
+                      boxShadow: "0 4px 14px rgba(255, 105, 80, 0.4)",
+                      transition: "all 0.4s ease",
+                      transform: "scale(1)",
                       "&:hover": {
-                        backgroundColor: "primary.main",
+                        background:
+                          "linear-gradient(90deg, #FF914D 0%, #FF6A5B 100%)",
+                        boxShadow: "0 6px 20px rgba(255, 105, 80, 0.5)",
+                        transform: "scale(1.05)",
                       },
                     }}
                   >

@@ -48,7 +48,7 @@ const Header = () => {
 
   return (
     <>
-      <Container maxWidth="xl">
+      <Container maxWidth="lg">
         {/* Top Info Bar */}
         <Box sx={{ py: 3, borderBottom: "1px solid #eee" }}>
           <Stack
@@ -136,7 +136,6 @@ const Header = () => {
           sx={{
             bgcolor: "transparent",
             boxShadow: "none",
-            borderBottom: "1px solid #eee",
           }}
         >
           <Toolbar
@@ -175,8 +174,8 @@ const Header = () => {
                     href={item.href}
                     underline="none"
                     sx={{
-                      fontWeight: 600,
-                      fontSize: "0.95rem",
+                      fontWeight: 500,
+                      fontSize: "1.15rem",
                       color: "neutral.black",
                       position: "relative",
                       "&:hover": {

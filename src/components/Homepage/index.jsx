@@ -11,11 +11,13 @@ import Testimonials from "../Testimonials";
 import Faqs from "../Faqs";
 import Newsletter from "../Newsletter";
 import bannerBg from "../../assets/banner-bg.png";
+import OrganizationCTA from "../OrganizationCTA";
 const Homepage = () => {
   return (
     <>
       <Box
         sx={{
+          px: 10,
           position: "relative",
           overflow: "hidden",
           minHeight: { xs: "auto", md: "100vh" }, // optional full height on large
@@ -60,6 +62,7 @@ const Homepage = () => {
       </Box>
       <Box id="coaches" sx={{ scrollMarginTop: "100px" }}>
         <FeaturedCoaches />
+        <OrganizationCTA />
       </Box>
       <Box id="testimonials" sx={{ scrollMarginTop: "100px" }}>
         <Testimonials />

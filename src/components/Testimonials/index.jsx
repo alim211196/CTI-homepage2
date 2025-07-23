@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Slider from "react-slick";
 import {
   Container,
@@ -7,18 +7,24 @@ import {
   Avatar,
   Stack,
   IconButton,
+  keyframes,
 } from "@mui/material";
 import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
+import { motion, useInView } from "framer-motion";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import image1 from "../../assets/testimonials/image1.jpg";
-import image2 from "../../assets/testimonials/image2.jpg";
-import image3 from "../../assets/testimonials/image3.jpg";
-import image4 from "../../assets/testimonials/image4.jpg";
-import image5 from "../../assets/testimonials/image5.jpg";
-import image6 from "../../assets/testimonials/image6.jpg";
+
+import image1 from "../../assets/herosection/img1.jpg";
+import image2 from "../../assets/herosection/img2.jpg";
+import image3 from "../../assets/herosection/img3.jpg";
+import image4 from "../../assets/herosection/img4.jpg";
+import image5 from "../../assets/herosection/img1.jpg";
+import image6 from "../../assets/herosection/img2.jpg";
+import image7 from "../../assets/herosection/img3.jpg";
 import quoteIcon from "../../assets/testimonials/quote-icon.svg";
 import bgDots from "../../assets/testimonials/map-dot.png";
+
+// Testimonials Data
 const testimonials = [
   {
     name: "Sara William",
@@ -56,8 +62,20 @@ const testimonials = [
     image: image6,
     text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed di nonumy eirmod tempor labore et dolore magna.",
   },
+  {
+    name: "Lisa William",
+    role: "Content Writing",
+    image: image7,
+    text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed di nonumy eirmod tempor invidunt ut labore et dolor magn aliq erat.",
+  },
 ];
 
+// Bubble animation keyframes
+const bubbleAnim = keyframes`
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+`;
 
 const NextArrow = (props) => {
   const { onClick } = props;
@@ -111,6 +129,7 @@ const PrevArrow = (props) => {
 
 const Testimonials = () => {
   const [activeSlide, setActiveSlide] = useState(0);
+  const sliderRef = useRef();
 
   const settings = {
     dots: false,
@@ -118,15 +137,26 @@ const Testimonials = () => {
     speed: 1000,
     slidesToShow: 1,
     autoplay: true,
-    autoplaySpeed: 4000,
+    autoplaySpeed: 5000,
     arrows: true,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
     beforeChange: (oldIndex, newIndex) => setActiveSlide(newIndex),
   };
 
+  const handleAvatarClick = (index) => {
+    setActiveSlide(index);
+    sliderRef.current.slickGoTo(index);
+  };
+
+  // Scroll Animation Refs
+  const headingRef = useRef(null);
+  const sliderRefBox = useRef(null);
+  const isHeadingInView = useInView(headingRef, { once: true, margin: "-100px" });
+  const isSliderInView = useInView(sliderRefBox, { once: true, margin: "-100px" });
+
   return (
-    <Container maxWidth="xl">
+    <Container maxWidth="lg">
       <Box
         sx={{
           py: { xs: 8, md: 10 },
@@ -134,57 +164,71 @@ const Testimonials = () => {
           backgroundImage: `url(${bgDots})`,
           backgroundRepeat: "no-repeat",
           backgroundSize: {
-            xs: "cover", // cover full area on small screens
-            sm: "contain", // keep aspect ratio on medium+
+            xs: "cover",
+            sm: "contain",
             md: "contain",
           },
         }}
       >
-        {/* Header */}
-        <Box textAlign="center" mb={10}>
-          <Typography variant="h4" fontWeight={700}>
-            Our{" "}
-            <Box component="span" color="primary.light">
-              Testimonials
-            </Box>
-          </Typography>
-        </Box>
-
-        {/* Testimonials Slider */}
-        <Box
-          sx={{
-            p: { xs: 8, md: 5 },
-            maxWidth: "100%",
-            mx: "auto",
-            position: "relative",
-          }}
-          mt={4}
+        {/* Heading */}
+        <motion.div
+          ref={headingRef}
+          initial={{ opacity: 0, y: 50 }}
+          animate={isHeadingInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <Slider {...settings}>
-            {testimonials.map((item, index) => (
-              <Box key={index} px={2}>
-                <Box textAlign="center" sx={{ maxWidth: 800, mx: "auto" }}>
-                  <img
-                    src={quoteIcon}
-                    alt="Quote"
-                    style={{ width: 40, margin: "auto" }}
-                  />
-                  <Typography variant="h6" mt={3} mb={6} fontWeight={400}>
-                    {item.text}
-                  </Typography>
-                  <Stack alignItems="center">
-                    <Typography variant="h6">{item.name}</Typography>
-                    <Typography variant="body2" color="text.secondary">
-                      {item.role}
-                    </Typography>
-                  </Stack>
-                </Box>
+          <Box textAlign="center" mb={10}>
+            <Typography variant="h4" fontWeight={700}>
+              Our{" "}
+              <Box component="span" color="primary.light">
+                Testimonials
               </Box>
-            ))}
-          </Slider>
-        </Box>
+            </Typography>
+          </Box>
+        </motion.div>
 
-        {/* Avatar Highlights */}
+        {/* Slider Section */}
+        <motion.div
+          ref={sliderRefBox}
+          initial={{ opacity: 0, y: 50 }}
+          animate={isSliderInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          <Box
+            sx={{
+              p: { xs: 8, md: 5 },
+              maxWidth: "100%",
+              mx: "auto",
+              position: "relative",
+            }}
+            mt={4}
+          >
+            <Slider {...settings} ref={sliderRef}>
+              {testimonials.map((item, index) => (
+                <Box key={index} px={2}>
+                  <Box textAlign="center" sx={{ maxWidth: 800, mx: "auto" }}>
+                    <img
+                      src={quoteIcon}
+                      alt="Quote"
+                      style={{ width: 40, margin: "auto" }}
+                    />
+                    <Typography variant="h6" mt={3} mb={6} fontWeight={400}>
+                      {item.text}
+                    </Typography>
+                    <Stack alignItems="center">
+                      <Typography variant="h6">{item.name}</Typography>
+                      <Typography variant="body2" color="text.secondary">
+                        {item.role}
+                      </Typography>
+                    </Stack>
+                  </Box>
+                </Box>
+              ))}
+            </Slider>
+          </Box>
+        </motion.div>
+
+        {/* Avatar List */}
         <Box
           mt={6}
           display="flex"
@@ -198,11 +242,11 @@ const Testimonials = () => {
 
             return (
               <Box
-                key={item.name}
+                key={item.name + idx}
+                onClick={() => handleAvatarClick(idx)}
                 sx={{
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
+                  cursor: "pointer",
+                  animation: isActive ? `${bubbleAnim} 2s infinite` : "none",
                 }}
               >
                 <Avatar
@@ -220,11 +264,11 @@ const Testimonials = () => {
                       md: isActive ? 110 : 70,
                     },
                     border: "2px solid",
-                    borderColor: "primary.light",
+                    borderColor: isActive ? "primary.light" : "grey.300",
                     boxShadow: isActive
                       ? "0 0 0 8px rgba(203,28,27,0.2)"
                       : "none",
-                    transition: "all 0.3s ease",
+                    transition: "transform 0.3s ease-in-out",
                     transform: {
                       xs:
                         idx % 2 === 0
@@ -242,6 +286,9 @@ const Testimonials = () => {
                         idx % 2 === 0
                           ? "translateY(-40px)"
                           : "translateY(40px)",
+                    },
+                    "&:hover": {
+                      transform: "scale(1.1)",
                     },
                   }}
                 />

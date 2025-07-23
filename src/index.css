@@ -18,6 +18,7 @@ a {
   color: #85151C;
   text-decoration: inherit;
 }
+
 a:hover {
   color: #FF4939;
 }
@@ -46,9 +47,11 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
   border-color: #FF4939;
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
@@ -59,10 +62,26 @@ button:focus-visible {
     color: #85151C;
     background-color: #ffffff;
   }
+
   a:hover {
     color: #FF4939;
   }
+
   button {
     background-color: #f9f9f9;
+  }
+}
+
+@keyframes floatBubble {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+
+  100% {
+    transform: translateY(0px);
   }
 }
