@@ -14,6 +14,8 @@ import icon1 from "../../assets/features/icon5.png";
 import icon2 from "../../assets/features/icon7.png";
 import icon3 from "../../assets/features/icon8.png";
 import icon4 from "../../assets/features/icon9.png";
+import SectionHeading from "../Common/SectionHeading";
+import bg1 from "../../assets/bg1.svg";
 // Animation Variants
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -75,26 +77,19 @@ const imageGrid = [
   image10,
 ];
 
-const imgStyle = {
-  width: "100%",
-  maxWidth: 200,
-  borderRadius: 16,
-  objectFit: "cover",
-  boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
-  cursor: "pointer",
-};
+
 
 const sizeMap = {
-  0: "medium",
-  1: "large",
-  2: "small",
-  3: "medium",
-  4: "large",
-  5: "medium",
-  6: "large",
-  7: "small",
-  8: "medium",
-  9: "small",
+  0: "small",  // First column, top
+  1: "large",   // Second column, top
+  2: "medium",  // Second column, below 1
+  3: "small",   // Third column, top
+  4: "medium",  // Third column, below 3
+  5: "large",   // Fourth column, top
+  6: "medium",  // Fourth column, below 5
+  7: "large",   // Fifth column, top
+  8: "medium",  // Fifth column, below 7
+  9: "small",   // Last image, small at bottom
 };
 
 const sizeStyleMap = {
@@ -107,56 +102,78 @@ const HoverImage = ({ src, alt, size = "medium" }) => {
 
   return (
     <motion.div
-      initial="hidden"
-      animate="visible"
-      variants={{
-        hidden: { opacity: 0, scale: 0.95, y: 20 },
-        visible: {
-          opacity: 1,
-          scale: 1,
-          y: 0,
-          transition: { duration: 0.6 },
-        },
+      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: 40 }}
+      transition={{
+        duration: 0.6,
+        ease: [0.25, 0.8, 0.25, 1],
       }}
     >
-      <motion.img
-        src={src}
-        alt={alt}
+      <motion.div
         whileHover={{
-          scale: 1.08,
-          boxShadow: "0px 12px 24px rgba(0, 0, 0, 0.2)",
+          scale: 1.05,
+          boxShadow: "0px 12px 24px rgba(0, 0, 0, 0.3)",
         }}
-        transition={{
-          duration: 0.4,
-          ease: [0.25, 0.8, 0.25, 1],
-        }}
+        transition={{ duration: 0.3 }}
         style={{
           width,
           height,
           borderRadius: 16,
-          objectFit: "cover",
+          overflow: "hidden",
           cursor: "pointer",
-          transition: "transform 0.6s ease, box-shadow 0.6s ease",
+          position: "relative",
         }}
-      />
+      >
+        <img
+          src={src}
+          alt={alt}
+          loading="lazy"
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            display: "block",
+            transition: "transform 0.3s ease",
+          }}
+        />
+        {/* Optional Color Overlay on Hover */}
+        <motion.div
+          whileHover={{ backgroundColor: "rgba(0,0,0,0.2)" }}
+          transition={{ duration: 0.3 }}
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            borderRadius: 16,
+          }}
+        />
+      </motion.div>
     </motion.div>
-
   );
 };
 
+
 const Features = () => {
   return (
-    <Container maxWidth="lg">
-      <Box sx={{ py: { xs: 8, md: 5 } }}>
+    <Container maxWidth="xl">
+      <Box sx={{
+        px: 2,
+        py: { xs: 8, md: 5 }, overflow: "hidden",
+        backgroundImage: `url(${bg1})`,
+        backgroundRepeat: "no-repeat",
+        backgroundSize: {
+          xs: "cover",
+          sm: "contain",
+          md: "contain",
+        },
+      }}>
         {/* Header */}
         <Box textAlign="center" mb={6}>
-          <Typography variant="h4" fontWeight={700}>
-            Platform{" "}
-            <Box component="span" color="primary.light">
-              Features
-            </Box>
-          </Typography>
-          <Typography variant="body1" mt={1} color="text.secondary">
+          <SectionHeading title={"Platform"} subtitle={"Features"} />
+
+          <Typography variant="body1" mt={1} color="black">
             Nunc consectetur ex nunc, id porttitor leo semper eget. Vivamus
             interdum, mauris quis cursus sodales, urn
           </Typography>
@@ -232,7 +249,7 @@ const Features = () => {
 
                 <Typography
                   variant="caption"
-                  color="text.secondary"
+                  color="black"
                   mt={0.5}
                   sx={{
                     fontSize: {
@@ -255,21 +272,13 @@ const Features = () => {
 
         {/* Mosaic Image Layout */}
         <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.8, ease: [0.25, 0.8, 0.25, 1] }}
-          variants={{
-            hidden: { opacity: 0, y: 50 },
-            visible: {
-              opacity: 1,
-              y: 0,
-              transition: {
-                duration: 1,
-                ease: [0.25, 0.8, 0.25, 1],
-                staggerChildren: 0.2,
-              },
-            },
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{
+            duration: 0.6,
+            delay: 0.15,
+            ease: [0.25, 0.8, 0.25, 1],
           }}
         >
           <Grid container spacing={2} justifyContent="center" px={2}>
@@ -283,7 +292,6 @@ const Features = () => {
             ].map((col, index) => (
               <Grid
                 key={index}
-                // size={{xs:6,sm:4,md:2}}
                 item
                 xs={6}
                 sm={4}
@@ -296,27 +304,19 @@ const Features = () => {
                 }}
               >
                 {col.images.map((imgIndex, i) => (
-                  <motion.div
+                  <HoverImage
                     key={imgIndex}
-                    initial={{ opacity: 0, y: 40 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.2 }}
-                    transition={{
-                      duration: 0.8,
-                      ease: [0.25, 0.8, 0.25, 1],
-                      delay: i * 0.2,
-                    }}
-                  >
-                    <HoverImage
-                      src={imageGrid[imgIndex]}
-                      alt={`img-${imgIndex}`}
-                      size={sizeMap[imgIndex]}
-                    /></motion.div>
+                    src={imageGrid[imgIndex]}
+                    alt={`img-${imgIndex}`}
+                    size={sizeMap[imgIndex]}
+                  />
                 ))}
               </Grid>
             ))}
           </Grid>
         </motion.div>
+
+
       </Box>
     </Container>
   );

@@ -12,7 +12,8 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import shape1 from "../../assets/Faqs/shape.svg";
 import image1 from "../../assets/Faqs/2.png";
 import { motion } from "framer-motion";
-
+import bgDots from "../../assets/testimonials/map-dot.png";
+const MotionTypography = motion(Typography);
 const faqs_content = [
   {
     question: "If I face any issue then how can I contact with you?",
@@ -33,8 +34,17 @@ const faqs_content = [
 
 const Faqs = () => {
   return (
-    <Container maxWidth="lg">
-      <Box sx={{ py: { xs: 6, md: 8 } }}>
+    <Container maxWidth="xl">
+      <Box sx={{
+        py: { xs: 6, md: 8 }, overflow: "hidden",
+        backgroundImage: `url(${bgDots})`,
+        backgroundRepeat: "no-repeat",
+        backgroundSize: {
+          xs: "cover",
+          sm: "contain",
+          md: "contain",
+        },
+      }}>
         <Stack
           direction={{ xs: "column", md: "row" }}
           spacing={6}
@@ -75,7 +85,7 @@ const Faqs = () => {
                   zIndex: 0,
                   borderRadius: "5%",
                   position: "absolute",
-                  top: 178,
+                  top: { md: 200, xl: 232 },
                   left: 0,
                 }}
               />
@@ -105,37 +115,30 @@ const Faqs = () => {
           >
             <Stack spacing={2}>
               <Box sx={{ pl: { md: 6 }, mb: 4 }}>
-                <Typography
-                  variant="body2"
+                <MotionTypography
+                  component="h4"
+                  whileHover={{
+                    scale: 1.05,
+                    color: "	rgba(133, 21, 28, 0.9)", // gold-like hover color
+                  }}
+                  transition={{ type: "spring", stiffness: 300 }}
                   sx={{
-                    color: "primary.light",
+                    fontFamily: '"July It", sans-serif',
+                    fontSize: { xs: "2rem", md: "2.5rem" },
+                    color: "rgba(255, 73, 57, 0.9)",
                     fontWeight: 600,
-                    textDecoration: "underline",
-                    fontSize: {
-                      xs: "0.9rem",
-                      sm: "1rem",
-                      md: "1.05rem",
-                      lg: "1.125rem",
-                    },
-                    transition: "all 0.3s ease",
-                    cursor: "pointer",
                     display: "inline-block",
-                    "&:hover": {
-                      color: "primary.main",
-                      textShadow: "0 1px 3px rgba(0,0,0,0.2)",
-                      transform: "scale(1.05)",
-                      textDecoration: "none",
-                    },
+                    cursor: 'pointer'
                   }}
                 >
                   Frequently Ask Questions
-                </Typography>
+                </MotionTypography>
 
-                <Typography variant="h4" fontWeight={600} gutterBottom>
+                <Typography variant="h6" fontWeight={600} gutterBottom>
                   Do you have questions?
                 </Typography>
 
-                <Typography variant="body1" color="text.secondary" mb={4}>
+                <Typography variant="body1" color="black" mb={4}>
                   There are many variations of passages of Lorem Ipsum
                   available, but the majority have suffered alteration in some
                   form, by injected humour.
@@ -153,10 +156,10 @@ const Faqs = () => {
                     defaultExpanded={idx === 0}
                   >
                     <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                      <Typography>{faq.question}</Typography>
+                      <Typography sx={{ fontWeight: 'bold' }}>{faq.question}</Typography>
                     </AccordionSummary>
                     <AccordionDetails>
-                      <Typography color="text.secondary">
+                      <Typography color="black">
                         {faq.answer}
                       </Typography>
                     </AccordionDetails>

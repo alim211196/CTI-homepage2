@@ -22,7 +22,7 @@ const fadeUp = {
 
 const Newsletter = () => {
   return (
-    <Container maxWidth="lg" sx={{ mb: -20 }}>
+    <Container maxWidth="xl" sx={{ mb: -20 }}>
       <Box
         component={motion.div}
         initial="hidden"
@@ -124,8 +124,10 @@ const Newsletter = () => {
                 <Button
                   variant="outlined"
                   sx={{
-                    color: "#FCE297",
-                    borderColor: "#FCE297",
+                    color: "black",
+                    background: "#FCE297",
+                    borderColor: "#FF6A5B",
+
                     borderRadius: "999px",
                     px: 4,
                     py: 1.2,
@@ -141,6 +143,7 @@ const Newsletter = () => {
                       backgroundColor: "rgba(255, 106, 91, 0.1)",
                       borderColor: "#FCE297",
                       transform: "scale(1.05)",
+                      color: 'white'
                     },
                   }}
                 >

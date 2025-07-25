@@ -1,4 +1,3 @@
-import React from "react";
 import {
   AppBar,
   Toolbar,
@@ -21,11 +20,7 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import HomeIcon from "@mui/icons-material/Home";
 import InfoIcon from "@mui/icons-material/Info";
 import StarIcon from "@mui/icons-material/Star";
-import EmojiObjectsIcon from "@mui/icons-material/EmojiObjects";
 import GroupIcon from "@mui/icons-material/Group";
-import ForumIcon from "@mui/icons-material/Forum";
-import HelpIcon from "@mui/icons-material/Help";
-import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import logo from '../../assets/logo.png';
 const Header = () => {
   const theme = useTheme();
@@ -33,24 +28,18 @@ const Header = () => {
 
   const navItems = [
     { label: "Home", icon: <HomeIcon />, href: "#" },
-    { label: "About Us", icon: <InfoIcon />, href: "#about-us" },
-    { label: "Features", icon: <StarIcon />, href: "#features" },
-    {
-      label: "Value Proposition",
-      icon: <EmojiObjectsIcon />,
-      href: "#value-proposition",
-    },
-    { label: "Coaches", icon: <GroupIcon />, href: "#coaches" },
-    { label: "Testimonials", icon: <ForumIcon />, href: "#testimonials" },
-    { label: "Faq's", icon: <HelpIcon />, href: "#faqs" },
-    { label: "Newsletter", icon: <MailOutlineIcon />, href: "#newsletter" },
+    { label: "For Coaches", icon: <InfoIcon />, href: "#for-coaches" },
+    { label: "Coach Levels", icon: <StarIcon />, href: "#coach-levels" },
+    { label: "Find Coaches", icon: <GroupIcon />, href: "#find-coaches" },
+    { label: "Coach Match Quiz", icon: <GroupIcon />, href: "#coach-match-quiz" },
+    { label: "Organizational Needs", icon: <GroupIcon />, href: "#organizational-needs" },
   ];
 
   return (
     <>
-      <Container maxWidth="lg">
+      <Container maxWidth="xl">
         {/* Top Info Bar */}
-        <Box sx={{ py: 3, borderBottom: "1px solid #eee" }}>
+        <Box sx={{ py: 3, px: 1, borderBottom: "1px solid #eee" }}>
           <Stack
             direction={{ xs: "column", md: "row" }}
             justifyContent="space-between"
@@ -63,7 +52,7 @@ const Header = () => {
                 src={logo}
                 alt="logo"
                 style={{ marginRight: 8 }}
-                width={180}
+                width={240}
               />
             </Box>
 
@@ -71,7 +60,7 @@ const Header = () => {
             <Stack
               direction={{ xs: "column", sm: "row" }}
               spacing={{ xs: 2, sm: 4 }}
-              sx={{ width: "100%" }}
+              sx={{ width: "100%", color: '#000' }}
               justifyContent={{ sm: "space-between", md: "flex-end" }}
               alignItems={{ xs: "flex-start", sm: "center" }}
               flexWrap="wrap"
@@ -119,7 +108,7 @@ const Header = () => {
                     <Typography variant="body1" sx={{ fontWeight: 500 }}>
                       {info.title}
                     </Typography>
-                    <Typography variant="body2" color="text.secondary">
+                    <Typography variant="body2" color="black">
                       {info.desc}
                     </Typography>
                   </Stack>
@@ -135,7 +124,7 @@ const Header = () => {
           elevation={0}
           sx={{
             bgcolor: "transparent",
-            boxShadow: "none",
+            boxShadow: "none", px: 1,
           }}
         >
           <Toolbar

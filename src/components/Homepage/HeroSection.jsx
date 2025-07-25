@@ -1,12 +1,11 @@
 import { Box, Typography, Stack, Container } from "@mui/material";
 import { motion } from "framer-motion";
-import shape1 from "../../assets/valueproposition/shape1.png";
-import React, { useEffect, useState } from "react";
-import heroImg1 from "../../assets/herosection/img1.jpg";
-import heroImg2 from "../../assets/herosection/img2.jpg";
-import heroImg3 from "../../assets/herosection/img3.jpg";
-import heroImg4 from "../../assets/herosection/img4.jpg";
-
+import { useEffect, useState } from "react";
+import heroImg1 from "../../assets/herosection/image1.png";
+import heroImg2 from "../../assets/herosection/image2.png";
+import heroImg3 from "../../assets/herosection/image3.png";
+import heroImg4 from "../../assets/herosection/image4.png";
+import bg1 from "../../assets/bg1.svg";
 // Slide-in for left content
 const heroLeftVariants = {
   hidden: {
@@ -40,7 +39,7 @@ const heroRightVariants = {
 
 const HeroSection = () => {
 
-  const words = ["Anything", "Leadership"];
+  const words = ["Leadership", "Success", "Anything"];
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [displayText, setDisplayText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
@@ -71,7 +70,7 @@ const HeroSection = () => {
 
 
   return (
-    <Container maxWidth="lg">
+    <Container maxWidth="xl">
       <style>
         {`
           @keyframes floatBubble {
@@ -88,7 +87,18 @@ const HeroSection = () => {
         `}
       </style>
 
-      <Box sx={{ px: 3, py: { xs: 8, md: 10 } }}>
+      <Box
+        sx={{
+          px: 3, py: { xs: 8, md: 10 },
+          overflow: "visible",
+          backgroundImage: `url(${bg1})`,
+          backgroundRepeat: "no-repeat",
+          backgroundSize: {
+            xs: "cover",
+            sm: "contain",
+            md: "contain",
+          },
+        }}>
         <Stack
           direction={{ xs: "column", md: "row" }}
           spacing={6}
@@ -109,21 +119,6 @@ const HeroSection = () => {
                 textAlign: { xs: "center", md: "left" },
               }}
             >
-              <Box
-                component="img"
-                src={shape1}
-                alt="Shape"
-                sx={{
-                  position: "absolute",
-                  bottom: "-110px",
-                  left: -20,
-                  width: 100,
-                  height: 100,
-                  animation: "pulseShape 3s infinite ease-in-out",
-                  zIndex: 0,
-                  opacity: 0.9,
-                }}
-              />
               <Box sx={{ position: "relative", zIndex: 1 }}>
                 <Typography
                   variant="h2"
@@ -169,6 +164,7 @@ const HeroSection = () => {
                           duration: 1,
                           ease: "easeInOut",
                         }}
+                        style={{ color: 'black', fontWeight: 'normal' }}
                       >
                         |
                       </motion.span>
@@ -179,7 +175,7 @@ const HeroSection = () => {
                 <Typography
                   sx={{
                     mt: 3,
-                    color: "text.secondary",
+                    color: "black",
                     lineHeight: 1.8,
                     fontSize: { xs: "0.95rem", md: "1rem" },
                   }}
@@ -225,7 +221,9 @@ const HeroSection = () => {
                     transition={{ duration: 0.3 }}
                     style={{
                       position: "absolute",
-                      borderRadius: "50%",
+                      borderTopLeftRadius: "50%",
+                      borderBottomLeftRadius: '50%',
+                      borderBottomRightRadius: '50%',
                       objectFit: "cover",
                       width: sizes[index],
                       height: sizes[index],
@@ -243,8 +241,8 @@ const HeroSection = () => {
                 const bubbles = [
                   { top: "60%", left: "30%" },
                   { top: "25%", right: "25%" },
-                  { bottom: "-35%", left: "30%" },
-                  { bottom: "5%", right: "10%" },
+                  { bottom: "-10%", left: "60%" },
+                  { bottom: "-5%", right: "10%" },
                   { bottom: "-20%", left: "-30%" },
                   { top: "-10%", right: "-10%" },
                 ];
@@ -253,7 +251,7 @@ const HeroSection = () => {
                   "primary.light",
                   "primary.main",
                   "secondary.main",
-                  "text.secondary",
+                  "black",
                   "info.main",
                   "warning.main",
                 ];

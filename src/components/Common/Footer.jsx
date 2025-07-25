@@ -15,7 +15,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import { motion } from "framer-motion";
 import logo from "../../assets/logo.png";
-
+import mapDot from "../../assets/testimonials/map-dot.png";
 const navItems = [
   { label: "About Us", href: "#about-us" },
   { label: "Features", href: "#features" },
@@ -38,7 +38,16 @@ const fadeInUp = {
 const Footer = () => {
   return (
     <Container maxWidth="xxl" sx={{ backgroundColor: "#f2f7fd", py: 10 }}>
-      <Box sx={{ mt: 10, pt: 8, pb: 4 }}>
+      <Box sx={{
+        mt: 10, pt: 8, overflow: "visible",
+        backgroundImage: `url(${mapDot})`,
+        backgroundRepeat: "no-repeat",
+        backgroundSize: {
+          xs: "cover",
+          sm: "contain",
+          md: "contain",
+        },
+      }}>
         <Grid container spacing={8}>
           {/* About */}
           <Grid size={{ xs: 12, sm: 6, md: 3 }}>
@@ -132,7 +141,7 @@ const Footer = () => {
                     key={index}
                     href={item.href}
                     underline="hover"
-                    color="text.secondary"
+                    color="black"
                   >
                     {item.label}
                   </Link>
@@ -157,7 +166,7 @@ const Footer = () => {
             sx={{ mt: 6, borderTop: "1px solid #ddd", pt: 3 }}
           >
             <Grid size={{ xs: 12, md: 6 }}>
-              <Typography variant="body2" color="text.secondary">
+              <Typography variant="body2" color="black">
                 © Copyrights {new Date().getFullYear()} CTI. All rights reserved
               </Typography>
             </Grid>

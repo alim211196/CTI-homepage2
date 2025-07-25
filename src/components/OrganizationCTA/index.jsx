@@ -34,7 +34,7 @@ const OrganizationCTA = () => {
 
                     <Typography
                         variant="body1"
-                        sx={{ mb: 4, color: "text.secondary" }}
+                        sx={{ mb: 4, color: "black" }}
                     >
                         Take our organizational needs assessment or find the perfect coach for your team.
                     </Typography>

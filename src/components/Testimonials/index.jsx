@@ -23,6 +23,7 @@ import image6 from "../../assets/herosection/img2.jpg";
 import image7 from "../../assets/herosection/img3.jpg";
 import quoteIcon from "../../assets/testimonials/quote-icon.svg";
 import bgDots from "../../assets/testimonials/map-dot.png";
+import SectionHeading from "../Common/SectionHeading";
 
 // Testimonials Data
 const testimonials = [
@@ -156,7 +157,7 @@ const Testimonials = () => {
   const isSliderInView = useInView(sliderRefBox, { once: true, margin: "-100px" });
 
   return (
-    <Container maxWidth="lg">
+    <Container maxWidth="xl">
       <Box
         sx={{
           py: { xs: 8, md: 10 },
@@ -177,13 +178,9 @@ const Testimonials = () => {
           animate={isHeadingInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <Box textAlign="center" mb={10}>
-            <Typography variant="h4" fontWeight={700}>
-              Our{" "}
-              <Box component="span" color="primary.light">
-                Testimonials
-              </Box>
-            </Typography>
+          <Box textAlign="center" >
+            <SectionHeading title={"Our"} subtitle={"Testimonials"} />
+
           </Box>
         </motion.div>
 
@@ -201,7 +198,6 @@ const Testimonials = () => {
               mx: "auto",
               position: "relative",
             }}
-            mt={4}
           >
             <Slider {...settings} ref={sliderRef}>
               {testimonials.map((item, index) => (
@@ -217,7 +213,7 @@ const Testimonials = () => {
                     </Typography>
                     <Stack alignItems="center">
                       <Typography variant="h6">{item.name}</Typography>
-                      <Typography variant="body2" color="text.secondary">
+                      <Typography variant="body2" color="black">
                         {item.role}
                       </Typography>
                     </Stack>
