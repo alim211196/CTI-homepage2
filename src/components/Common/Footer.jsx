@@ -7,9 +7,7 @@ import {
   Stack,
   IconButton,
 } from "@mui/material";
-import PhoneIcon from "@mui/icons-material/Phone";
-import AccessTimeIcon from "@mui/icons-material/AccessTime";
-import LocationOnIcon from "@mui/icons-material/LocationOn";
+import { AccessTimeOutlined, CallOutlined, LocationOnOutlined } from "@mui/icons-material";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
@@ -80,7 +78,7 @@ const Footer = () => {
             >
               <Stack spacing={2}>
                 <Box display="flex" alignItems="flex-start">
-                  <PhoneIcon
+                  <CallOutlined
                     sx={{ color: "secondary.main", mt: 0.5, mr: 1 }}
                     fontSize="small"
                   />
@@ -93,7 +91,7 @@ const Footer = () => {
                 </Box>
 
                 <Box display="flex" alignItems="flex-start">
-                  <AccessTimeIcon
+                  <AccessTimeOutlined
                     sx={{ color: "secondary.main", mt: 0.5, mr: 1 }}
                     fontSize="small"
                   />
@@ -106,7 +104,7 @@ const Footer = () => {
                 </Box>
 
                 <Box display="flex" alignItems="flex-start">
-                  <LocationOnIcon
+                  <LocationOnOutlined
                     sx={{ color: "secondary.main", mt: 0.5, mr: 1 }}
                     fontSize="small"
                   />

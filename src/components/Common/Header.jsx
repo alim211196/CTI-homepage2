@@ -11,9 +11,6 @@ import {
   useTheme,
   useMediaQuery,
 } from "@mui/material";
-import PhoneIcon from "@mui/icons-material/Phone";
-import AccessTimeIcon from "@mui/icons-material/AccessTime";
-import LocationOnIcon from "@mui/icons-material/LocationOn";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
@@ -22,6 +19,7 @@ import InfoIcon from "@mui/icons-material/Info";
 import StarIcon from "@mui/icons-material/Star";
 import GroupIcon from "@mui/icons-material/Group";
 import logo from '../../assets/logo.png';
+import { AccessTimeOutlined, CallOutlined, LocationOnOutlined } from "@mui/icons-material";
 const Header = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
@@ -68,7 +66,7 @@ const Header = () => {
               {[
                 {
                   icon: (
-                    <PhoneIcon
+                    <CallOutlined
                       sx={{ color: "secondary.main" }}
                       fontSize="small"
                     />
@@ -78,7 +76,7 @@ const Header = () => {
                 },
                 {
                   icon: (
-                    <AccessTimeIcon
+                    <AccessTimeOutlined
                       sx={{ color: "secondary.main" }}
                       fontSize="small"
                     />
@@ -88,7 +86,7 @@ const Header = () => {
                 },
                 {
                   icon: (
-                    <LocationOnIcon
+                    <LocationOnOutlined
                       sx={{ color: "secondary.main" }}
                       fontSize="small"
                     />
