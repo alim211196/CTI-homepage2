@@ -44,23 +44,23 @@ const cardVariants = {
 const platform_features = [
   {
     icon: icon1,
-    title: "Awesome Teachers",
-    desc: "Vivamus interdum, mauris interdum quis curdum sodales",
+    title: "Discover & Match",
+    desc: "Take our smart assessment to find coaches perfectly aligned with your needs and goals.",
   },
   {
     icon: icon2,
-    title: "Global Certificate",
-    desc: "Pellen eget tespharet que fringilla egugue id eget pharetra",
+    title: "Connect & Engage",
+    desc: "Schedule consultations with matched coaches and select the perfect fit for your journey.",
   },
   {
     icon: icon3,
-    title: "Best Programm",
-    desc: "Etiam risus neque, volutpat vel laoreet a, finibus volutpat non",
+    title: "Start Coaching",
+    desc: "Begin your personalized coaching sessions with flexible scheduling and comprehensive support.",
   },
   {
     icon: icon4,
-    title: "Student Support Service",
-    desc: "Mauris nec mi feugiat, cursus tortor nec, pharetra tellus",
+    title: "Track Progress",
+    desc: "Monitor your growth with detailed analytics and celebrate your achievements along the way.",
   },
 ];
 
@@ -85,10 +85,10 @@ const sizeMap = {
   2: "medium",  // Second column, below 1
   3: "small",   // Third column, top
   4: "medium",  // Third column, below 3
-  5: "large",   // Fourth column, top
-  6: "medium",  // Fourth column, below 5
-  7: "large",   // Fifth column, top
-  8: "medium",  // Fifth column, below 7
+  5: "medium",   // Fourth column, top
+  6: "small",  // Fourth column, below 5
+  7: "medium",   // Fifth column, top
+  8: "large",  // Fifth column, below 7
   9: "small",   // Last image, small at bottom
 };
 
@@ -157,9 +157,9 @@ const HoverImage = ({ src, alt, size = "medium" }) => {
 
 const Features = () => {
   return (
-    <Container maxWidth="xl">
+    <Container maxWidth="xxl" sx={{ padding: '0px!important' }}>
       <Box sx={{
-        px: 2,
+        px: 4,
         py: { xs: 8, md: 5 }, overflow: "hidden",
         backgroundImage: `url(${bg1})`,
         backgroundRepeat: "no-repeat",
@@ -174,8 +174,7 @@ const Features = () => {
           <SectionHeading title={"Platform"} subtitle={"Features"} />
 
           <Typography variant="body1" mt={1} color="black">
-            Nunc consectetur ex nunc, id porttitor leo semper eget. Vivamus
-            interdum, mauris quis cursus sodales, urn
+            Our streamlined process connects you with the right coach in minutes, not weeks. Simple, effective, and designed for results.
           </Typography>
         </Box>
 
@@ -202,7 +201,7 @@ const Features = () => {
                 elevation={0}
                 sx={{
                   backgroundColor: '#fff',
-                  boxShadow: '0 0 10px rgba(21, 87, 153, 0.08)',
+                  boxShadow: "0 4px 14px rgba(255, 105, 80, 0.4)",
                   padding: '25px 20px 19px',
                   borderRadius: '10px',
                   textAlign: 'center',
@@ -292,14 +291,18 @@ const Features = () => {
             ].map((col, index) => (
               <Grid
                 key={index}
-                item
-                xs={6}
-                sm={4}
-                md={2}
+                size={{ xs: 6, sm: 4, md: 2 }}
+                alignItems={'center'}
+                // item
+                // xs={6}
+                // sm={4}
+                // md={2}
                 sx={{
                   display: "flex",
+                  alignItems: 'center',
+                  justifyContent: 'center',
                   flexDirection: "column",
-                  gap: 3,
+                  gap: 2,
                   mt: { xs: 0, sm: col.mt },
                 }}
               >

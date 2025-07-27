@@ -37,7 +37,7 @@ const fadeInUp = {
 
 const Footer = () => {
   return (
-    <Container maxWidth="xxl" sx={{ backgroundColor: "#f2f7fd", py: 10 }}>
+    <Container maxWidth="xxl" sx={{ backgroundColor: "#f2f7fd", py: 5 }}>
       <Box sx={{
         mt: 10, pt: 8, overflow: "visible",
         backgroundImage: `url(${mapDot})`,
@@ -61,8 +61,9 @@ const Footer = () => {
               <Box>
                 <img src={logo} alt="Logo" width={280} />
                 <Typography variant="body2" sx={{ mt: 2 }}>
-                  Vivamus porta efficitur nibh nec convallis. Vestibulum egestas
-                  eleifend justo. Ut tellus ipsum, accumsan.
+                  At Coaches Training Institute, we empower individuals to unlock their full
+                  potential through world-class coaching programs.
+
                 </Typography>
               </Box>
             </motion.div>

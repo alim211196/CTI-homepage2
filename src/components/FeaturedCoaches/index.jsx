@@ -20,7 +20,7 @@ const coaches = [
     role: "Executive Leadership Coach",
     summary:
       "Former Fortune 500 executive with 15+ years of transforming organizational culture.",
-    tag: "Education",
+    tag: "CPCC ELITE PLUS",
     image: heroImg1,
   },
   {
@@ -28,7 +28,7 @@ const coaches = [
     role: "Career Transition Specialist",
     summary:
       "Helping professionals navigate career pivots and achieve breakthrough success.",
-    tag: "Education",
+    tag: "CPCC ELITE",
     image: heroImg2,
   },
   {
@@ -36,7 +36,7 @@ const coaches = [
     role: "Wellness & Performance Coach",
     summary:
       "Integrating holistic wellness approaches with high-performance strategies.",
-    tag: "Education",
+    tag: "CPC POWER",
     image: heroImg3,
   },
   {
@@ -44,14 +44,14 @@ const coaches = [
     role: "Executive Leadership Coach",
     summary:
       "Former Fortune 500 executive with 15+ years of transforming organizational culture.",
-    tag: "Education",
+    tag: "CPCC ELITE PLUS",
     image: heroImg4,
   }, {
     name: "John Doe",
     role: "Executive Leadership Coach",
     summary:
       "Former Fortune 500 executive with 15+ years of transforming organizational culture.",
-    tag: "Education",
+    tag: "CPCC ELITE",
     image: heroImg1,
   },
   {
@@ -59,7 +59,7 @@ const coaches = [
     role: "Career Transition Specialist",
     summary:
       "Helping professionals navigate career pivots and achieve breakthrough success.",
-    tag: "Education",
+    tag: "CPC POWER",
     image: heroImg2,
   },
   {
@@ -67,7 +67,7 @@ const coaches = [
     role: "Wellness & Performance Coach",
     summary:
       "Integrating holistic wellness approaches with high-performance strategies.",
-    tag: "Education",
+    tag: "CPCC ELITE",
     image: heroImg3,
   },
   {
@@ -75,13 +75,28 @@ const coaches = [
     role: "Executive Leadership Coach",
     summary:
       "Former Fortune 500 executive with 15+ years of transforming organizational culture.",
-    tag: "Education",
+    tag: "CPCC ELITE PLUS",
     image: heroImg4,
   },
 ];
 
+const tagGradients = {
+  "CPCC ELITE PLUS": {
+    background: "linear-gradient(to right, #fcb045, #fd1d1d)",
+    color: "#fff",
+  },
+  "CPCC ELITE": {
+    background: "linear-gradient(to right, #b24592, #f15f79)",
+    color: "#fff",
+  },
+  "CPC POWER": {
+    background: "linear-gradient(to right, #36D1DC, #5B86E5)",
+    color: "#fff",
+  },
+};
+
 const FeaturedCoaches = () => (
-  <Container maxWidth="xxl" sx={{ py: { xs: 6, md: 8 } }}>
+  <Container maxWidth="xxl" sx={{ padding: '0px!important', py: { xs: 6, md: 8 } }}>
     <Box sx={{
       px: 1,
       py: { xs: 8, md: 5 }, overflow: "hidden",
@@ -96,7 +111,7 @@ const FeaturedCoaches = () => (
       <SectionHeading title={"Coaches"} subtitle={"Training Institute"} />
 
       <Typography align="center" color="black" mb={5}>
-        Organizations across the UAE and beyond.
+        Meet some of our elite coaches who are transforming careers and organizations across the UAE and beyond.
       </Typography>
 
       <Swiper
@@ -122,6 +137,7 @@ const FeaturedCoaches = () => (
               <Card
                 elevation={0}
                 sx={{
+
                   background: 'transparent',
                   borderRadius: 3,
                   overflow: "hidden",
@@ -169,19 +185,21 @@ const FeaturedCoaches = () => (
                   <Box
                     sx={{
                       mt: 0.8,
-                      border: "1.8px solid #A82314",
-                      color: "#A82314",
                       borderRadius: "999px",
                       px: 1.4,
                       py: 0.3,
                       fontSize: "0.75rem",
                       display: "inline-block",
                       fontWeight: 600,
-                      backgroundColor: "#fff",
+                      ...tagGradients[coach.tag] || {
+                        backgroundColor: "#e0e0e0",
+                        color: "#333",
+                      },
                     }}
                   >
                     {coach.tag}
                   </Box>
+
                 </Box>
                 <Box
                   sx={{

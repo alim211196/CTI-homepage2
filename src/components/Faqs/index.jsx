@@ -16,27 +16,28 @@ import bgDots from "../../assets/testimonials/map-dot.png";
 const MotionTypography = motion(Typography);
 const faqs_content = [
   {
-    question: "If I face any issue then how can I contact with you?",
+    question: "How can I get in touch if I have a question or issue?",
     answer:
-      "An attack of the ague sent him home, and on recovery, having resolved to attend a high school and fit himself to become a teacher, he passed the next four years in a hard struggle with poverty.",
+      "You can contact us anytime by filling out our support form or reaching out to our customer care team via email or phone. We're here to help and aim to respond as quickly as possible.",
   },
   {
-    question: "I need to know your best proffered Courses?",
+    question: "What are your most recommended or popular courses?",
     answer:
-      "An attack of the ague sent him home, and on recovery, having resolved to attend a high school and fit himself to become a teacher, he passed the next four years in a hard struggle with poverty.",
+      "Our most popular courses are designed to help individuals grow both personally and professionally. We recommend starting with foundational programs like our Leadership or Coaching certification tracks, which are highly impactful and widely recognized.",
   },
   {
-    question: "How much money we need to give you?",
+    question: "What is the cost of your courses and programs?",
     answer:
-      "An attack of the ague sent him home, and on recovery, having resolved to attend a high school and fit himself to become a teacher, he passed the next four years in a hard struggle with poverty.",
+      "Course costs vary based on the program and level. We offer flexible pricing options and payment plans to make it accessible. For detailed pricing, visit the course page or contact our enrollment team.",
   },
 ];
 
+
 const Faqs = () => {
   return (
-    <Container maxWidth="xl">
+    <Container maxWidth="xxl">
       <Box sx={{
-        py: { xs: 6, md: 8 }, overflow: "hidden",
+        py: { xs: 6, md: 8 }, px: 2, overflow: "hidden",
         backgroundImage: `url(${bgDots})`,
         backgroundRepeat: "no-repeat",
         backgroundSize: {
@@ -85,7 +86,7 @@ const Faqs = () => {
                   zIndex: 0,
                   borderRadius: "5%",
                   position: "absolute",
-                  top: { md: 200, xl: 232 },
+                  top: { md: 197, xl: 288 },
                   left: 0,
                 }}
               />
@@ -133,33 +134,66 @@ const Faqs = () => {
                 >
                   Frequently Ask Questions
                 </MotionTypography>
-
                 <Typography variant="h6" fontWeight={600} gutterBottom>
-                  Do you have questions?
+                  Have Questions? We’re Here to Help
                 </Typography>
 
                 <Typography variant="body1" color="black" mb={4}>
-                  There are many variations of passages of Lorem Ipsum
-                  available, but the majority have suffered alteration in some
-                  form, by injected humour.
+                  Whether you're exploring our programs or already enrolled, we’re here to support you. Browse through the FAQs below or reach out to our team for personalized assistance.
                 </Typography>
-
                 {faqs_content.map((faq, idx) => (
                   <Accordion
                     key={idx}
                     elevation={0}
+                    disableGutters
+                    defaultExpanded={idx === 0}
                     sx={{
                       mb: 2,
-                      boxShadow: "0 4px 14px rgba(250, 204, 194, 0.4)",
-                      border: "none",
+                      borderRadius: 2,
+                      overflow: "hidden",
+                      transition: "box-shadow 0.3s ease",
+                      boxShadow: "0 6px 20px rgba(250, 204, 194, 0.5)",
+                      '&:hover': {
+                        boxShadow: "0 8px 24px rgba(250, 204, 194, 0.6)",
+                      },
+                      '&.Mui-expanded': {
+                        boxShadow: "0 10px 30px rgba(250, 204, 194, 0.7)",
+                      },
+                      '&:before': {
+                        display: 'none', // ✅ This removes the black line
+                      },
                     }}
-                    defaultExpanded={idx === 0}
                   >
-                    <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                    <AccordionSummary
+                      expandIcon={
+                        <ExpandMoreIcon
+                          sx={{
+                            transition: "transform 0.3s ease",
+                            '&.Mui-expanded': {
+                              transform: "rotate(180deg)",
+                            },
+                          }}
+                        />
+                      }
+                      sx={{
+                        '&:focus': {
+                          outline: 'none',
+                        },
+                        '&:focus-visible': {
+                          outline: 'none',
+                        },
+                        '&.Mui-focused': {
+                          outline: 'none',
+                        },
+                        '&::before': {
+                          display: 'none', // ✅ Also remove from summary if it’s there
+                        },
+                      }}
+                    >
                       <Typography sx={{ fontWeight: 'bold' }}>{faq.question}</Typography>
                     </AccordionSummary>
                     <AccordionDetails>
-                      <Typography color="black">
+                      <Typography color="text.primary">
                         {faq.answer}
                       </Typography>
                     </AccordionDetails>

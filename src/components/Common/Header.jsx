@@ -37,7 +37,7 @@ const Header = () => {
 
   return (
     <>
-      <Container maxWidth="xl">
+      <Container maxWidth="xxl">
         {/* Top Info Bar */}
         <Box sx={{ py: 3, px: 1, borderBottom: "1px solid #eee" }}>
           <Stack
@@ -167,8 +167,11 @@ const Header = () => {
                       fontSize: "1.15rem",
                       color: "neutral.black",
                       position: "relative",
+                      cursor: 'pointer',
+                      transition: "transform 0.3s ease",
+
                       "&:hover": {
-                        color: "primary.light",
+                        color: "primary.light", transform: "scale(1.05)",
                       },
                       ...(item.label === "Home" && {
                         "&::after": {

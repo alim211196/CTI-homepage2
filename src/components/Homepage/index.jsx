@@ -12,12 +12,13 @@ import Faqs from "../Faqs";
 import Newsletter from "../Newsletter";
 import bannerBg from "../../assets/banner-bg.png";
 import OrganizationCTA from "../OrganizationCTA";
+import GetStartedCard from "../GetStartedCard";
 const Homepage = () => {
   return (
     <>
       <Box
         sx={{
-          px: 10,
+          // px: 10,
           position: "relative",
           overflow: "hidden",
           minHeight: { xs: "auto", md: "100vh" }, // optional full height on large
@@ -54,7 +55,9 @@ const Homepage = () => {
       <Box id="about-us" sx={{ scrollMarginTop: "100px" }}>
         <AboutUs />
       </Box>
+
       <Box id="features" sx={{ scrollMarginTop: "100px" }}>
+        <GetStartedCard />
         <Features />
       </Box>
       <Box id="value-proposition" sx={{ scrollMarginTop: "100px" }}>

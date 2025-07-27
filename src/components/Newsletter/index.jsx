@@ -22,7 +22,7 @@ const fadeUp = {
 
 const Newsletter = () => {
   return (
-    <Container maxWidth="xl" sx={{ mb: -20 }}>
+    <Container maxWidth="xxl" sx={{ mb: -20 }}>
       <Box
         component={motion.div}
         initial="hidden"

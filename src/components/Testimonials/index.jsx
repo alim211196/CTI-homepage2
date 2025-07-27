@@ -14,13 +14,13 @@ import { motion, useInView } from "framer-motion";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import image1 from "../../assets/herosection/img1.jpg";
-import image2 from "../../assets/herosection/img2.jpg";
-import image3 from "../../assets/herosection/img3.jpg";
-import image4 from "../../assets/herosection/img4.jpg";
-import image5 from "../../assets/herosection/img1.jpg";
-import image6 from "../../assets/herosection/img2.jpg";
-import image7 from "../../assets/herosection/img3.jpg";
+import image1 from "../../assets/herosection/image1.png";
+import image2 from "../../assets/herosection/image2.png";
+import image3 from "../../assets/herosection/image3.png";
+import image4 from "../../assets/herosection/image4.png";
+import image5 from "../../assets/herosection/image1.png";
+import image6 from "../../assets/herosection/image2.png";
+import image7 from "../../assets/herosection/image3.png";
 import quoteIcon from "../../assets/testimonials/quote-icon.svg";
 import bgDots from "../../assets/testimonials/map-dot.png";
 import SectionHeading from "../Common/SectionHeading";
@@ -28,46 +28,46 @@ import SectionHeading from "../Common/SectionHeading";
 // Testimonials Data
 const testimonials = [
   {
-    name: "Sara William",
-    role: "Content Writing",
+    name: "Ahmed Al-Rashid",
+    role: "CEO, Emirates Solutions",
     image: image1,
-    text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed di nonumy eirmod tempor invidunt ut labore et dolor magn aliq erat.",
+    text: "Coaches coaching transformed our leadership culture. The results speak for themselves - 40% improvement in team engagement.",
   },
   {
-    name: "Elena Swift",
-    role: "SEO Specialist",
+    name: "Fatima Al-Zahra",
+    role: "VP Marketing, Gulf Industries",
     image: image2,
-    text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed di nonumy eirmod tempor labore et dolore magna.",
+    text: "The coach matching process was incredibly precise. We found the perfect fit for our team development needs.",
   },
   {
-    name: "John Doe",
-    role: "SEO Specialist",
+    name: "Omar Hassan",
+    role: "Entrepreneur",
     image: image3,
-    text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed di nonumy eirmod tempor labore et dolore magna.",
+    text: "The organizational needs assessment helped us identify blind spots we never knew existed. Game-changing insights.",
   },
   {
-    name: "Lisa William",
-    role: "Content Writing",
+    name: "Ahmed Al-Rashid",
+    role: "CEO, Emirates Solutions",
     image: image4,
-    text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed di nonumy eirmod tempor invidunt ut labore et dolor magn aliq erat.",
+    text: "Coaches coaching transformed our leadership culture. The results speak for themselves - 40% improvement in team engagement.",
   },
   {
-    name: "Josh Swift",
-    role: "SEO Specialist",
+    name: "Fatima Al-Zahra",
+    role: "VP Marketing, Gulf Industries",
     image: image5,
-    text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed di nonumy eirmod tempor labore et dolore magna.",
+    text: "The organizational needs assessment helped us identify blind spots we never knew existed. Game-changing insights.",
   },
   {
     name: "Stella Doe",
     role: "SEO Specialist",
     image: image6,
-    text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed di nonumy eirmod tempor labore et dolore magna.",
+    text: "The organizational needs assessment helped us identify blind spots we never knew existed. Game-changing insights.",
   },
   {
-    name: "Lisa William",
-    role: "Content Writing",
+    name: "Omar Hassan",
+    role: "Entrepreneur",
     image: image7,
-    text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed di nonumy eirmod tempor invidunt ut labore et dolor magn aliq erat.",
+    text: "The organizational needs assessment helped us identify blind spots we never knew existed. Game-changing insights.",
   },
 ];
 
@@ -157,7 +157,7 @@ const Testimonials = () => {
   const isSliderInView = useInView(sliderRefBox, { once: true, margin: "-100px" });
 
   return (
-    <Container maxWidth="xl">
+    <Container maxWidth="xxl">
       <Box
         sx={{
           py: { xs: 8, md: 10 },
@@ -250,14 +250,14 @@ const Testimonials = () => {
                   alt={item.name}
                   sx={{
                     width: {
-                      xs: isActive ? 70 : 50,
-                      sm: isActive ? 90 : 60,
-                      md: isActive ? 110 : 70,
+                      xs: isActive ? 90 : 70,
+                      sm: isActive ? 110 : 85,
+                      md: isActive ? 130 : 100,
                     },
                     height: {
-                      xs: isActive ? 70 : 50,
-                      sm: isActive ? 90 : 60,
-                      md: isActive ? 110 : 70,
+                      xs: isActive ? 90 : 70,
+                      sm: isActive ? 110 : 85,
+                      md: isActive ? 130 : 100,
                     },
                     border: "2px solid",
                     borderColor: isActive ? "primary.light" : "grey.300",

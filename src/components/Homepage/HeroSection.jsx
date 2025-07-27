@@ -1,4 +1,4 @@
-import { Box, Typography, Stack, Container } from "@mui/material";
+import { Box, Typography, Grid, Stack, Container, Button } from "@mui/material";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import heroImg1 from "../../assets/herosection/image1.png";
@@ -6,6 +6,9 @@ import heroImg2 from "../../assets/herosection/image2.png";
 import heroImg3 from "../../assets/herosection/image3.png";
 import heroImg4 from "../../assets/herosection/image4.png";
 import bg1 from "../../assets/bg1.svg";
+import GroupOutlinedIcon from '@mui/icons-material/GroupOutlined';
+import StarBorderOutlinedIcon from '@mui/icons-material/StarBorderOutlined';
+import EmojiEventsOutlinedIcon from '@mui/icons-material/EmojiEventsOutlined';
 // Slide-in for left content
 const heroLeftVariants = {
   hidden: {
@@ -36,10 +39,26 @@ const heroRightVariants = {
   },
 };
 
-
+const stats = [
+  {
+    icon: <GroupOutlinedIcon fontSize="large" color="secondary" />,
+    value: "500+",
+    label: "Certified Coaches",
+  },
+  {
+    icon: <StarBorderOutlinedIcon fontSize="large" color="secondary" />,
+    value: "4.9",
+    label: "Average Rating",
+  },
+  {
+    icon: <EmojiEventsOutlinedIcon fontSize="large" color="secondary" />,
+    value: "10K+",
+    label: "Success Stories",
+  },
+];
 const HeroSection = () => {
 
-  const words = ["Leadership", "Success", "Anything"];
+  const words = ["Life", "Career", "Executive", "Wellness"];
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [displayText, setDisplayText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
@@ -70,7 +89,7 @@ const HeroSection = () => {
 
 
   return (
-    <Container maxWidth="xl">
+    <Container maxWidth="xxl" sx={{ padding: '0px!important' }}>
       <style>
         {`
           @keyframes floatBubble {
@@ -89,7 +108,7 @@ const HeroSection = () => {
 
       <Box
         sx={{
-          px: 3, py: { xs: 8, md: 10 },
+          px: 3, pr: 10, py: { xs: 8, md: 10 },
           overflow: "visible",
           backgroundImage: `url(${bg1})`,
           backgroundRepeat: "no-repeat",
@@ -132,7 +151,8 @@ const HeroSection = () => {
                     },
                   }}
                 >
-                  The Smarter Way to Learn{" "}
+                  Transform Your Organization
+                  Through our {" "}
                   <Box
                     component="span"
                     sx={{
@@ -169,7 +189,9 @@ const HeroSection = () => {
                         |
                       </motion.span>
                     </motion.span>
+
                   </Box>
+                  Coaches.
                 </Typography>
 
                 <Typography
@@ -180,10 +202,104 @@ const HeroSection = () => {
                     fontSize: { xs: "0.95rem", md: "1rem" },
                   }}
                 >
-                  Mauris malesuada enim eget blandit gravida. Duis hendrerit
-                  cursus turpis, id mollis est rutrum nec. Sed interdum nisi id
-                  libero tincidunt, sit amet vestibulum tortor porttitor.
+                  Connect with world-class certified coaches and unlock your team's potential.
+                  From executive leadership to team development,
+                  we bridge the gap between vision and results.
                 </Typography>
+                <Box sx={{ py: 5 }}>
+                  <Grid container spacing={4} justifyContent="center">
+                    {stats.map((stat, index) => (
+                      <Grid size={{ xs: 12, sm: 4 }} key={index}>
+                        <Box
+                          sx={{
+                            cursor: 'pointer',
+                            transition: "transform 0.3s ease",
+                            "&:hover": {
+                              transform: "scale(1.05)",
+                            },
+                          }}
+                        >
+                          <Stack alignItems="center" spacing={1}>
+                            <Stack direction="row" alignItems="center" spacing={1}>
+                              {stat.icon}
+                              <Typography variant="h5" fontWeight="bold" color="secondary">
+                                {stat.value}
+                              </Typography>
+                            </Stack>
+                            <Typography variant="body1" color="black" textAlign="center">
+                              {stat.label}
+                            </Typography>
+                          </Stack>
+                        </Box>
+                      </Grid>
+                    ))}
+                  </Grid>
+
+                </Box>
+                <Box
+                  sx={{
+                    display: "flex",
+                    gap: 2,
+                    flexWrap: "wrap",
+                    justifyContent: "center",
+                  }}
+                >
+                  <Button
+                    variant="contained"
+                    sx={{
+                      color: "white",
+                      background: "linear-gradient(90deg, #FF6A5B 0%, #FF914D 100%)",
+                      borderRadius: "999px",
+                      px: 4,
+                      py: 1.2,
+                      fontWeight: 600,
+                      fontSize: {
+                        xs: "0.95rem",
+                        sm: "1rem",
+                      },
+                      textTransform: "none",
+                      boxShadow: "0 4px 14px rgba(255, 105, 80, 0.4)",
+                      transition: "all 0.4s ease",
+                      transform: "scale(1)",
+                      "&:hover": {
+                        background:
+                          "linear-gradient(90deg, #FF914D 0%, #FF6A5B 100%)",
+                        boxShadow: "0 6px 20px rgba(255, 105, 80, 0.5)",
+                        transform: "scale(1.05)",
+                      },
+                    }}
+                  >
+                    Find Your Coach
+                  </Button>
+
+                  <Button
+                    variant="outlined"
+                    sx={{
+                      color: "#FF6A5B", // Matches the darker gradient color
+                      borderColor: "#FF6A5B",
+                      borderRadius: "999px",
+                      px: 4,
+                      py: 1.2,
+                      fontWeight: 600,
+                      fontSize: {
+                        xs: "0.95rem",
+                        sm: "1rem",
+                      },
+                      textTransform: "none",
+                      transition: "all 0.4s ease",
+                      transform: "scale(1)",
+                      "&:hover": {
+                        background:
+                          "linear-gradient(90deg, #FF914D 0%, #FF6A5B 100%)",
+                        boxShadow: "0 6px 20px rgba(255, 105, 80, 0.5)",
+                        transform: "scale(1.05)",
+                        color: 'white'
+                      },
+                    }}
+                  >
+                    Join as Coach
+                  </Button>
+                </Box>
               </Box>
             </Box>
           </motion.div>

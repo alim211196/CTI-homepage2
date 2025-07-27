@@ -18,38 +18,67 @@ import SectionHeading from "../Common/SectionHeading";
 import { useState } from "react";
 
 
-const steps = [
+const forOrg = [
   {
     icon: image1,
-    title: "Search for Tutors",
-    desc: "Post Tuition by creating Account or without Account.",
+    title: "Targeted Solutions",
+    desc: "Customized coaching programs aligned with your organizational goals and challenges.",
     bg: "#f8edc8a9",
     dark_bg: "neutral.main",
   },
   {
     icon: image2,
-    title: "Get Free Session",
-    desc: "Get free one day demo session with the tutor...",
+    title: "Measurable Results",
+    desc: "Track progress with comprehensive analytics and ROI measurement tools.",
     bg: "#fcdcd9a9",
     dark_bg: "secondary.main",
   },
   {
     icon: image3,
-    title: "Hire your tutor",
-    desc: "If you like the demo session, confirm the teacher.",
+    title: "Quality Assurance",
+    desc: "All coaches are vetted, certified professionals with proven track records. these are three points i need forth one.",
     bg: "#fcdcd9a9",
     dark_bg: "secondary.main",
   },
   {
     icon: image4,
-    title: "Get results",
-    desc: "Gain knowledge, boost confidence and improve...",
+    title: "Scalable Engagement",
+    desc: "Easily expand coaching access across teams, departments, or global offices with flexible deployment options.",
     bg: "#f8edc8a9",
     dark_bg: "neutral.main",
   },
 ];
 
-
+const forCoach = [
+  {
+    icon: image1,
+    title: "Enterprise Clients",
+    desc: "Access to premium corporate clients and high-value coaching opportunities.",
+    bg: "#f8edc8a9",
+    dark_bg: "neutral.main",
+  },
+  {
+    icon: image2,
+    title: "Professional Network",
+    desc: "Connect with a community of elite coaches and industry leaders.",
+    bg: "#fcdcd9a9",
+    dark_bg: "secondary.main",
+  },
+  {
+    icon: image3,
+    title: "Career Growth",
+    desc: "Continuous development opportunities and tier advancement programs.",
+    bg: "#fcdcd9a9",
+    dark_bg: "secondary.main",
+  },
+  {
+    icon: image4,
+    title: "Dedicated Support",
+    desc: "Benefit from personalized onboarding, responsive assistance, and tools that help you focus on impactful coaching.",
+    bg: "#f8edc8a9",
+    dark_bg: "neutral.main",
+  },
+];
 
 
 
@@ -61,7 +90,7 @@ const ValueProposition = () => {
 
 
 
-  const renderTextSection = () => (
+  const renderTextSection = (text, btnText) => (
     <motion.div
       ref={ref}
       initial={{ x: 100, opacity: 0 }}
@@ -69,74 +98,22 @@ const ValueProposition = () => {
       transition={{ duration: 0.8, ease: "easeOut" }}
     >
       <Box mb={2}>
-        <Stack
-          direction="row"
-          spacing={1.5}
-          alignItems="start"
-          mb={2}
-          justifyContent={activeTab === 'org' ? "start" : "end"}
-          flexWrap="wrap"
-        >
-          {[
-            { label: "For Organizations", value: "org" },
-            { label: "For Coaches", value: "coach" },
-          ].map((tab) => (
-            <Box
-              key={tab.value}
-              onClick={() => setActiveTab(tab.value)}
-              sx={{
-                cursor: "pointer",
-                borderRadius: "10px",
-                px: 2.5, // reduced from 3.5
-                py: 0.8,  // reduced from 1.2
-                fontWeight: 600,
-                fontSize: {
-                  xs: "0.8rem", // reduced from 0.95rem
-                  sm: "0.9rem", // reduced from 1rem
-                },
-                transition: "all 0.4s ease",
-                transform: "scale(1)",
-                background: activeTab === tab.value
-                  ? "linear-gradient(90deg, #FF6A5B 0%, #FF914D 100%)"
-                  : "transparent",
-                color: activeTab === tab.value ? "white" : "#FF6A5B",
-                border: `1px solid ${activeTab === tab.value ? "transparent" : "#FF6A5B"}`,
-                textAlign: "center",
-                boxShadow: activeTab === tab.value
-                  ? "0 3px 10px rgba(255, 105, 80, 0.3)" // slightly smaller shadow
-                  : "none",
-                "&:hover": {
-                  transform: "scale(1.05)",
-                  background:
-                    activeTab === tab.value
-                      ? "linear-gradient(90deg, #FF914D 0%, #FF6A5B 100%)"
-                      : "rgba(255, 106, 91, 0.1)",
-                  boxShadow:
-                    activeTab === tab.value
-                      ? "0 5px 16px rgba(255, 105, 80, 0.4)"
-                      : "0 2px 4px rgba(255, 105, 80, 0.2)",
-                },
-              }}
-            >
-              {tab.label}
-            </Box>
-          ))}
-        </Stack>
-
-
-
         <Typography variant="body1" color="black" mb={2}>
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-          sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.
 
-
+          {text}
         </Typography>
-        <Typography variant="body1" color="black">
-
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-          sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr.
+        <Typography variant="body1" color="black" >
+          CTI refers to the Coaches Training Institute,
+          a global leader in coach and leadership training.
+          It is known for its experiential and immersive learning approach,
+          focusing on building relational capacity, enhancing communication,
+          and fostering authentic leadership.
+          CTI is the largest and oldest coach training and leadership development
+          school and is the only program that teaches the Coaches Model.
+          They have trained over 145,000 coaches, leaders, and professionals,
+          including employees in a significant portion of Fortune 100 companies.
         </Typography>
+
         <Box mt={4} pt={4} borderTop="1px dashed #ddd">
           <Button
             variant="contained"
@@ -158,7 +135,7 @@ const ValueProposition = () => {
               },
             }}
           >
-            Register Now
+            {btnText}
           </Button>
         </Box>
       </Box>
@@ -181,6 +158,7 @@ const ValueProposition = () => {
           sx={{ width: { xs: "100%", sm: "45%", md: "45%" } }}
         >
           {[0, 2].map((idx) => {
+            const steps = activeTab === 'org' ? forOrg : forCoach
             const item = steps[idx];
             return (
               <Box
@@ -255,6 +233,7 @@ const ValueProposition = () => {
           sx={{ width: { xs: "100%", sm: "45%", md: "45%" }, mt: 8 }}
         >
           {[1, 3].map((idx) => {
+            const steps = activeTab === 'org' ? forOrg : forCoach
             const item = steps[idx];
             return (
               <Box
@@ -326,7 +305,7 @@ const ValueProposition = () => {
     </Box>
   );
   return (
-    <Container maxWidth="xl">
+    <Container maxWidth="xxl">
       <Box sx={{
         p: 2, position: "relative", overflow: "hidden",
         backgroundImage: `url(${bgDots})`,
@@ -340,9 +319,64 @@ const ValueProposition = () => {
         <SectionHeading title={"Value"} subtitle={"Proposition"} />
 
         <Stack
+          direction="row"
+          spacing={1.5}
+          alignItems="center"
+          mb={2}
+          justifyContent="center"
+          flexWrap="wrap"
+        >
+          {[
+            { label: "For Organizations", value: "org" },
+            { label: "For Coaches", value: "coach" },
+          ].map((tab) => (
+            <Box
+              key={tab.value}
+              onClick={() => setActiveTab(tab.value)}
+              sx={{
+                width: 170,
+                cursor: "pointer",
+                borderRadius: "999px",
+                px: 2.5, // reduced from 3.5
+                py: 0.8,  // reduced from 1.2
+                fontWeight: 600,
+                fontSize: {
+                  xs: "0.8rem", // reduced from 0.95rem
+                  sm: "0.9rem", // reduced from 1rem
+                },
+                transition: "all 0.4s ease",
+                transform: "scale(1)",
+                background: activeTab === tab.value
+                  ? "linear-gradient(90deg, #FF6A5B 0%, #FF914D 100%)"
+                  : "transparent",
+                color: activeTab === tab.value ? "white" : "#FF6A5B",
+                border: `1px solid ${activeTab === tab.value ? "transparent" : "#FF6A5B"}`,
+                textAlign: "center",
+                boxShadow: activeTab === tab.value
+                  ? "0 3px 10px rgba(255, 105, 80, 0.3)" // slightly smaller shadow
+                  : "none",
+                "&:hover": {
+                  transform: "scale(1.05)",
+                  background:
+                    activeTab === tab.value
+                      ? "linear-gradient(90deg, #FF914D 0%, #FF6A5B 100%)"
+                      : "rgba(255, 106, 91, 0.1)",
+                  boxShadow:
+                    activeTab === tab.value
+                      ? "0 5px 16px rgba(255, 105, 80, 0.4)"
+                      : "0 2px 4px rgba(255, 105, 80, 0.2)",
+                },
+              }}
+            >
+              {tab.label}
+            </Box>
+          ))}
+        </Stack>
+
+        <Stack
           direction={{ xs: "column-reverse", md: "row" }}
           spacing={6}
-          alignItems="center"
+          alignItems="baseline"
           justifyContent="center"
           flexWrap="wrap"
         >
@@ -351,7 +385,7 @@ const ValueProposition = () => {
             <>
               {/* Text on Left */}
               <Box sx={{ flex: 1, pr: { md: 5 } }} component={motion.div} layout>
-                {renderTextSection()}
+                {renderTextSection("Join an elite network of professional coaches and accelerate your career with exclusive opportunities and resources.", "Join Our Coach Network")}
               </Box>
 
               {/* Cards on Right */}
@@ -368,7 +402,7 @@ const ValueProposition = () => {
 
               {/* Text on Right */}
               <Box sx={{ flex: 1, pl: { md: 5 } }} component={motion.div} layout>
-                {renderTextSection()}
+                {renderTextSection("Transform your workplace culture and achieve breakthrough performance with our comprehensive coaching ecosystem.", "Explore Organizational Solutions")}
               </Box>
             </>
           )}

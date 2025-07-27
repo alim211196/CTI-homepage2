@@ -6,12 +6,13 @@ import earthBg from "../../assets/aboutus/earth-bg.svg";
 import image1 from "../../assets/aboutus/center.png";
 import image2 from "../../assets/aboutus/left.png";
 import image3 from "../../assets/aboutus/right.png";
+import { CheckCircle, TaskAltOutlined } from "@mui/icons-material";
 
 const MotionBox = motion(Box);
 const MotionTypography = motion(Typography);
 const AboutUs = () => {
   return (
-    <Container maxWidth="xl">
+    <Container maxWidth="xxl" sx={{ pb: { md: 0, xl: 5 } }}>
       <Box
         sx={{
           py: { xs: 6, md: 8 },
@@ -54,9 +55,9 @@ const AboutUs = () => {
               alt="Earth Background"
               sx={{
                 position: "absolute",
-                width: { xs: "100%", sm: "80%", md: "100%" },
-                left: "0%",
-                top: "5%",
+                width: { xs: "100%", sm: "80%", md: "100%", xl: "80%" },
+                left: { md: "0%", xl: "10%" },
+                top: { md: "5%", xl: "1%" },
                 transform: "translateX(-50%)",
                 zIndex: 1,
               }}
@@ -101,7 +102,7 @@ const AboutUs = () => {
                 height: { xs: 100, sm: 120, md: 240 },
                 borderRadius: "50%",
                 objectFit: "cover",
-                left: { xs: "17%", sm: "150px", md: "-10%" },
+                left: { xs: "17%", sm: "150px", md: "-10%", xl: "0%" },
                 top: { xs: "55%", sm: "340px", md: "40%" },
                 zIndex: 3,
               }}
@@ -133,57 +134,60 @@ const AboutUs = () => {
             viewport={{ once: true, amount: 0.3 }}
             sx={{ flex: 1, width: "100%" }}
           >
-            <Stack spacing={2}>
-              <Stack direction="row" alignItems="center">
-
-                <MotionTypography
-                  component="h4"
-                  whileHover={{
-                    scale: 1.05,
-                    color: "	rgba(133, 21, 28, 0.9)", // gold-like hover color
-                  }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                  sx={{
-                    fontFamily: '"July It", sans-serif',
-                    fontSize: { xs: "2.5rem", md: "3rem" },
-                    color: "rgba(255, 73, 57, 0.9)",
-                    fontWeight: 600,
-                    display: "inline-block",
-                    cursor: 'pointer'
-                  }}
-                >
-                  About Us
-                </MotionTypography>
-              </Stack>
-
-              <Typography
-                variant="h4"
+            <Stack spacing={3}>
+              <MotionTypography
+                component="h2"
+                whileHover={{
+                  scale: 1.05,
+                  color: "rgba(133, 21, 28, 0.9)",
+                }}
+                transition={{ type: "spring", stiffness: 300 }}
                 sx={{
-                  fontWeight: 700,
-                  color: "neutral.black",
-                  lineHeight: 1.4,
-                  fontSize: { xs: "1.75rem", md: "2.25rem" },
+                  fontFamily: '"July It", sans-serif',
+                  fontSize: { xs: "2.5rem", md: "3rem" },
+                  color: "rgba(255, 73, 57, 0.9)",
+                  fontWeight: 600,
+                  cursor: "pointer",
                 }}
               >
-                The act or experience of one that learns a computer program that
-                makes learning fun
+                Who We Are
+              </MotionTypography>
+
+              <Typography variant="body1" sx={{ color: "black", fontSize: "1.05rem" }}>
+                CTI (Coaches Training Institute) is a global leader in coach and leadership training. With over 145,000 trained professionals, CTI is the largest and oldest coach training institute.
               </Typography>
 
-              <Typography
-                variant="body1"
-                sx={{ color: "black", mt: 2 }}
-              >
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                aliquyam erat.
-              </Typography>
+              <Stack spacing={2}>
+                <Stack direction="row" alignItems="flex-start" spacing={1}>
+                  <TaskAltOutlined color="secondary" fontSize="medium" />
+                  <Box>
+                    <Typography fontWeight={600}>Coaches Model</Typography>
+                    <Typography variant="body2" color="black">
+                      Emphasizes a collaborative and transformative approach to coaching.
+                    </Typography>
+                  </Box>
+                </Stack>
 
-              <Typography variant="body1" sx={{ color: "black" }}>
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                aliquyam erat. Lorem ipsum dolor sit amet, consetetur sadipscing
-                elitr.
-              </Typography>
+                <Stack direction="row" alignItems="flex-start" spacing={1}>
+                  <TaskAltOutlined color="secondary" fontSize="medium" />
+                  <Box>
+                    <Typography fontWeight={600}>ICF Accreditation</Typography>
+                    <Typography variant="body2" color="black">
+                      One of the first to be recognized as an ICF-accredited Level 2 education provider.
+                    </Typography>
+                  </Box>
+                </Stack>
+
+                <Stack direction="row" alignItems="flex-start" spacing={1}>
+                  <TaskAltOutlined color="secondary" fontSize="medium" />
+                  <Box>
+                    <Typography fontWeight={600}>Experiential Learning</Typography>
+                    <Typography variant="body2" color="black">
+                      Highly experiential training with real-time practice and feedback.
+                    </Typography>
+                  </Box>
+                </Stack>
+              </Stack>
             </Stack>
           </MotionBox>
         </Stack>
