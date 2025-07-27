@@ -12,7 +12,7 @@ const MotionBox = motion(Box);
 const MotionTypography = motion(Typography);
 const AboutUs = () => {
   return (
-    <Container maxWidth="xxl" sx={{ pb: { md: 0, xl: 5 } }}>
+    <Container maxWidth="xxl" sx={{ overflow: "hidden", pb: { md: 0, xl: 5 } }}>
       <Box
         sx={{
           py: { xs: 6, md: 8 },
