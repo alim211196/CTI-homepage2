@@ -12,7 +12,7 @@ const DotExpandButton = ({text}) => {
   };
 
   const arrowFontSize = hovered ? "18px" : "0px";
-  const arrowColor = hovered ? "#CB1C1B" : "#fff";
+  const arrowColor = hovered ? "#CB1C1B" : "transparent";
   const buttonBg = pressed ? "#404040" : hovered ? "#CB1C1B" : "#e5e5e5";
   const buttonColor = hovered ? "#fff" : "#CB1C1B";
   const buttonPaddingLeft = hovered ? "8px" : "12px";
