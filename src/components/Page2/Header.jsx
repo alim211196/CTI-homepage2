@@ -67,7 +67,7 @@ const Header = () => {
               sx={{
                 display: "flex",
                 alignItems: "center",
-                gap: 7,
+                gap: 6,
               }}
             >
               {/* Coaching dropdown */}
@@ -158,7 +158,7 @@ const Header = () => {
                   component="img"
                   src={logo}
                   alt="Logo"
-                  sx={{ width: "200px", height: "auto" }}
+                  sx={{ width: "270px", height: "auto" }}
                 />
               </Box>
 
@@ -180,7 +180,8 @@ const Header = () => {
                 </Link>
               ))}
 
-              <DotExpandButton text={"Login / Sign Up CTA"} />
+              <DotExpandButton text={"Login"} />
+              <DotExpandButton text={"Sign Up"} />
               {/* <Button
                 variant="outlined"
                 size="medium"

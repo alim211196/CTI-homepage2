@@ -28,7 +28,7 @@ export default function AboutUs() {
     <Box
       sx={{
         backgroundColor: "#f4f6fd",
-        mt: -2,
+        mt: -5,
         py: 10,
       }}
     >

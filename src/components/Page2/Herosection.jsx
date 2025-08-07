@@ -85,7 +85,7 @@ export default function Herosection() {
   return (
     <Box
       sx={{
-        top: -80,
+        top: -110,
         position: "relative",
         backgroundImage: `url(${bannerBg})`,
         backgroundRepeat: "no-repeat",
