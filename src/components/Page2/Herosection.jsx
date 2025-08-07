@@ -23,6 +23,9 @@ import pic5 from "../../assets/herosection/5.jpeg";
 import pic6 from "../../assets/herosection/6.jpeg";
 import pic7 from "../../assets/herosection/7.jpeg";
 import pic8 from "../../assets/herosection/8.jpeg";
+import pic9 from "../../assets/herosection/9.jpeg";
+import pic10 from "../../assets/herosection/10.jpeg";
+import pic11 from "../../assets/herosection/11.jpeg";
 import bannerBg from "../../assets/banner-bg.png";
 
 const images = [
@@ -81,6 +84,27 @@ const images = [
     tag: "coach",
     name: "Sam John",
     role: "Executive Leadership Coach",
+  },
+  {
+    id: 9,
+    src: pic9,
+    tag: "coach",
+    name: "Jim John",
+    role: "Wellness & Performance Coach",
+  },
+  {
+    id: 10,
+    src: pic10,
+    tag: "coach",
+    name: "Josh John",
+    role: "Executive Leadership Coach",
+  },
+  {
+    id: 11,
+    src: pic11,
+    tag: "coach",
+    name: "Josh John",
+    role: "Wellness & Performance Coach",
   },
 ];
 

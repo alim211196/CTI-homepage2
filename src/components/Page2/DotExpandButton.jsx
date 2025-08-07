@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Box, Button, Typography } from "@mui/material";
 
-const DotExpandButton = ({text}) => {
-  const [hovered, setHovered] = useState(false);
+const DotExpandButton = ({ text, hoveredVal }) => {
+  const [hovered, setHovered] = useState(hoveredVal || false);
   const [pressed, setPressed] = useState(false);
 
   const arrowTransform = () => {
@@ -26,8 +26,10 @@ const DotExpandButton = ({text}) => {
       disableRipple
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => {
-        setHovered(false);
-        setPressed(false);
+        if (!hoveredVal) {
+          setHovered(false);
+          setPressed(false);
+        }
       }}
       onMouseDown={() => setPressed(true)}
       onMouseUp={() => setPressed(false)}

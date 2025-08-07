@@ -181,8 +181,8 @@ const Header = () => {
               ))}
 
               <Box sx={{ display: "flex", gap: 2, width: "250px" }}>
-                <DotExpandButton text={"Login"} />
-                <DotExpandButton text={"Sign Up"} />
+                <DotExpandButton text={"Login"} hoveredVal={false} />
+                <DotExpandButton text={"Sign Up"} hoveredVal={true} />
               </Box>
 
               {/* <Button
