@@ -64,6 +64,7 @@ const Faqs = () => {
       </style>
       <Box
         sx={{
+          mt: 4,
           py: { xs: 6, md: 8 },
           px: 2,
           overflow: "hidden",
@@ -96,7 +97,7 @@ const Faqs = () => {
                 {[
                   {
                     src: image1,
-                    style: { top: "-22%", left: "15%" },
+                    style: { top: "-15%", left: "10%" },
                     type: "image",
                   },
                   {

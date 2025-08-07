@@ -1,10 +1,10 @@
 import { Box, Container, Typography, Card, IconButton } from "@mui/material";
-import image1 from "../../assets/featuredcoaches/new/image1.jpg";
-import image2 from "../../assets/featuredcoaches/new/image2.jpg";
-import image3 from "../../assets/featuredcoaches/new/image3.jpg";
-import image4 from "../../assets/featuredcoaches/new/image4.jpg";
-import image5 from "../../assets/featuredcoaches/new/image5.jpg";
-import image6 from "../../assets/featuredcoaches/new/image6.jpg";
+import image1 from "../../assets/featuredcoaches/i1.jpg";
+import image2 from "../../assets/featuredcoaches/i2.jpg";
+import image3 from "../../assets/featuredcoaches/i3.png";
+import image4 from "../../assets/featuredcoaches/i4.jpg";
+import image5 from "../../assets/featuredcoaches/i5.png";
+import image6 from "../../assets/featuredcoaches/i6.avif";
 import SectionHeading from "../Common/SectionHeading";
 import bg1 from "../../assets/bg1.svg";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -15,28 +15,28 @@ import { Add } from "@mui/icons-material";
 
 const itemsData = [
   {
-    title: "Individual Coaching",
+    title: "AI matching with the world’s top coaches",
     imgSrc: image1,
   },
   {
-    title: "Coaching For Organization",
-    imgSrc: image2,
-  },
-  {
-    title: "Train To Become A Coach",
-    imgSrc: image3,
-  },
-  {
-    title: "Individual Coaching",
-    imgSrc: image4,
-  },
-  {
-    title: "Coaching For Organization",
+    title: "Coaching sessions anytime, anywhere",
     imgSrc: image5,
   },
   {
-    title: "Train To Become A Coach",
+    title: "Personalize content for continuous growth",
     imgSrc: image6,
+  },
+  {
+    title: "Measure what matters",
+    imgSrc: image4,
+  },
+  {
+    title: "Discover and Match",
+    imgSrc: image2,
+  },
+  {
+    title: "Track Progress",
+    imgSrc: image3,
   },
 ];
 
@@ -132,14 +132,14 @@ const Features = () => {
                         px: 2,
                         py: 1.5,
                         background:
-                          "linear-gradient(to bottom, rgba(253, 253, 253, 1), rgba(187, 182, 182, 0))",
+                          "linear-gradient(to bottom, rgba(34, 33, 33, 0.73), rgba(187, 182, 182, 0))",
                         zIndex: 2,
                       }}
                     >
                       <Typography
                         variant="subtitle1"
                         sx={{
-                          color: "#000",
+                          color: "#fff",
                           fontWeight: 500,
                         }}
                         fontSize={20}

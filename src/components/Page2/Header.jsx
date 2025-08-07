@@ -102,7 +102,7 @@ const Header = () => {
                 <Menu
                   anchorEl={anchorEl}
                   open={Boolean(anchorEl)}
-                  onClose={() => setAnchorEl(null)}
+                  onMouseLeave={() => setAnchorEl(null)}
                   TransitionComponent={Grow} // <-- animation here
                   MenuListProps={{
                     onMouseEnter: () => setAnchorEl(anchorEl),
@@ -180,8 +180,11 @@ const Header = () => {
                 </Link>
               ))}
 
-              <DotExpandButton text={"Login"} />
-              <DotExpandButton text={"Sign Up"} />
+              <Box sx={{ display: "flex", gap: 2, width: "250px" }}>
+                <DotExpandButton text={"Login"} />
+                <DotExpandButton text={"Sign Up"} />
+              </Box>
+
               {/* <Button
                 variant="outlined"
                 size="medium"

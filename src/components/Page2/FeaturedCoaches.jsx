@@ -166,7 +166,7 @@ const FeaturedCoaches = () => {
     <Box
       sx={{
         py: 8,
-        background: "linear-gradient(90deg, #fcdcd9a9 0%, #f8edc8a9 100%)",
+        // background: "linear-gradient(90deg, #fcdcd9a9 0%, #f8edc8a9 100%)",
       }}
     >
       <Container maxWidth="lg">

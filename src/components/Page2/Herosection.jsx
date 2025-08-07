@@ -5,15 +5,24 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
-import { EffectCoverflow, Pagination } from "swiper/modules";
-import pic1 from "../../assets/herosection/hero5.webp";
-import pic2 from "../../assets/herosection/hero3.webp";
-import pic3 from "../../assets/herosection/hero1.webp";
-import pic4 from "../../assets/herosection/hero2.webp";
-import pic5 from "../../assets/herosection/hero4.webp";
-import pic6 from "../../assets/herosection/hero6.jpg";
-import image8 from "../../assets/herosection/image8.jpg";
-import image9 from "../../assets/herosection/image9.jpeg";
+import { EffectCoverflow, Autoplay } from "swiper/modules";
+// import pic1 from "../../assets/herosection/hero5.webp";
+// import pic2 from "../../assets/herosection/hero3.webp";
+// import pic3 from "../../assets/herosection/hero1.webp";
+// import pic4 from "../../assets/herosection/hero2.webp";
+// import pic5 from "../../assets/herosection/hero4.webp";
+// import pic6 from "../../assets/herosection/hero6.jpg";
+// import image8 from "../../assets/herosection/image8.jpg";
+// import image9 from "../../assets/herosection/image9.jpeg";
+
+import pic1 from "../../assets/herosection/1.jpeg";
+import pic2 from "../../assets/herosection/2.jpeg";
+import pic3 from "../../assets/herosection/3.jpeg";
+import pic4 from "../../assets/herosection/4.jpeg";
+import pic5 from "../../assets/herosection/5.jpeg";
+import pic6 from "../../assets/herosection/6.jpeg";
+import pic7 from "../../assets/herosection/7.jpeg";
+import pic8 from "../../assets/herosection/8.jpeg";
 import bannerBg from "../../assets/banner-bg.png";
 
 const images = [
@@ -61,14 +70,14 @@ const images = [
   },
   {
     id: 7,
-    src: image8,
+    src: pic7,
     tag: "coach",
     name: "Mark Desuza",
     role: "Wellness & Performance Coach",
   },
   {
     id: 8,
-    src: image9,
+    src: pic8,
     tag: "coach",
     name: "Sam John",
     role: "Executive Leadership Coach",
@@ -102,7 +111,7 @@ export default function Herosection() {
     >
       {/* Hero Section */}
       <HeroContainer>
-        <Typography variant="h3" fontWeight={600} gutterBottom sx={{ mt: 10}}>
+        <Typography variant="h3" fontWeight={600} gutterBottom sx={{ mt: 10 }}>
           Your Gateway to <br /> Coaching Excellence
         </Typography>
         <Typography
@@ -117,59 +126,85 @@ export default function Herosection() {
           consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
           labore.
         </Typography>
-        <Box mt={4}>
+        <Box
+          mt={4}
+          display="flex"
+          justifyContent="center" // ✅ Center horizontally
+          alignItems="center" // ✅ Center vertically (optional)
+          gap={5} // ✅ Gap between buttons
+          flexWrap="wrap" // ✅ Optional: wrap buttons on small screens
+        >
           <Button
-            variant="contained"
-            size="medium"
             sx={{
-              px: 3,
-              py: 1,
+              width: 270,
+              cursor: "pointer",
+              borderRadius: "999px",
+              px: 2.5,
+              py: 0.8,
               fontWeight: 600,
-              borderRadius: 1,
-              m: 2,
-              backgroundColor: "#CB1C1B",
-              color: "#fff",
-              transition: "transform 0.3s ease, opacity 0.3s ease",
+              fontSize: {
+                xs: "0.8rem",
+                sm: "0.9rem",
+              },
+              transition: "all 0.4s ease",
+              transform: "scale(1)",
+              background: "linear-gradient(90deg, #FF6A5B 0%, #FF914D 100%)",
+              color: "white",
+              border: "1px solid transparent",
+              textAlign: "center",
+              boxShadow: "0 3px 10px rgba(255, 105, 80, 0.3)",
               "&:hover": {
                 transform: "scale(1.05)",
-                backgroundColor: "#85151C",
+                background: "linear-gradient(90deg, #FF914D 0%, #FF6A5B 100%)",
+                boxShadow: "0 5px 16px rgba(255, 105, 80, 0.4)",
               },
             }}
           >
             Get Started Today
           </Button>
+
           <Button
-            variant="outlined"
-            size="medium"
             sx={{
-              px: 3,
-              py: 1,
+              width: 270,
+              cursor: "pointer",
+              borderRadius: "999px",
+              px: 2.5,
+              py: 0.8,
               fontWeight: 600,
-              borderRadius: 2,
-              m: 1,
-              color: "#FF4939",
-              border: "1px solid",
-              borderColor: "#FF4939",
-              backgroundColor: "transparent",
-              transition: "transform 0.3s ease, opacity 0.3s ease",
+              fontSize: {
+                xs: "0.8rem",
+                sm: "0.9rem",
+              },
+              transition: "all 0.4s ease",
+              transform: "scale(1)",
+              background: "transparent",
+              color: "#FF6A5B",
+              border: "1px solid #FF6A5B",
+              textAlign: "center",
+              boxShadow: "none",
               "&:hover": {
                 transform: "scale(1.05)",
-                backgroundColor: "#CB1C1B",
-                color: "#fff",
-                borderColor: "#CB1C1B",
+                background: "rgba(255, 106, 91, 0.1)",
+                boxShadow: "0 2px 4px rgba(255, 105, 80, 0.2)",
               },
             }}
           >
             Learn More
           </Button>
         </Box>
+
         {/* Swiper Section */}
         <Swiper
           effect="coverflow"
           grabCursor={true}
           centeredSlides={true}
           slidesPerView="auto"
-          initialSlide={4} // Center slide 5
+          loop={true} // ✅ Enables infinite loop
+          autoplay={{
+            delay: 3000, // ✅ Delay between slides (in ms)
+            disableOnInteraction: false, // ✅ Keeps autoplay after user interaction
+          }}
+          initialSlide={4}
           coverflowEffect={{
             rotate: 30,
             stretch: -30,
@@ -177,7 +212,7 @@ export default function Herosection() {
             modifier: 1,
             slideShadows: true,
           }}
-          modules={[EffectCoverflow]}
+          modules={[EffectCoverflow, Autoplay]} // ✅ Add Autoplay here
           style={{
             width: "100%",
             paddingTop: "50px",
