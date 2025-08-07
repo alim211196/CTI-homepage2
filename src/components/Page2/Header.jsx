@@ -15,6 +15,7 @@ import {
 import logo from "../../assets/logo.png";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import Grow from "@mui/material/Grow";
+import DotExpandButton from "./DotExpandButton";
 
 const navItems1 = [
   { label: "Find A Coach", href: "#" },
@@ -179,7 +180,8 @@ const Header = () => {
                 </Link>
               ))}
 
-              <Button
+              <DotExpandButton text={"Login / Sign Up CTA"} />
+              {/* <Button
                 variant="outlined"
                 size="medium"
                 sx={{
@@ -199,7 +201,7 @@ const Header = () => {
                 }}
               >
                 Login / Sign Up CTA
-              </Button>
+              </Button> */}
             </Box>
           </Toolbar>
         </Container>
