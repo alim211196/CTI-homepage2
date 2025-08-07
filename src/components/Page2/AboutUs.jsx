@@ -15,9 +15,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Autoplay } from "swiper/modules";
 import { motion } from "framer-motion";
-import video1 from "../../assets/aboutus/v1.gif";
-import video2 from "../../assets/aboutus/v2.gif";
-
+import video1 from "../../assets/aboutus/slide1.gif";
+import image2 from "../../assets/aboutus/image3.jpg";
+import video3 from "../../assets/aboutus/slide3.gif";
 const MotionTypography = motion(Typography);
 
 const faqs_content = [
@@ -43,7 +43,7 @@ const itemsData = [
     src: video1,
   },
   {
-    src: video2,
+    src: video3,
   },
 ];
 
@@ -205,20 +205,75 @@ export default function AboutUs() {
               modules={[Autoplay]}
             >
               {itemsData.map((item, idx) => (
-                <SwiperSlide key={idx}>
-                  <Box
-                    sx={{
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      height: "100%", // optional: ensures vertical centering
-                    }}
-                  >
-                    <img
-                      src={item.src}
-                      style={{ width: "50%", objectFit: "cover" }}
-                      alt=""
-                    />
+                <SwiperSlide
+                  key={idx}
+                  style={{ overflow: "visible !important" }}
+                >
+                  <Box sx={{ overflow: "visible", pt: "60px" }}>
+                    {" "}
+                    {/* <-- new wrapper for SwiperSlide content */}
+                    <Box
+                      sx={{
+                        position: "relative",
+                        width: { xs: "100%", sm: "80%", md: "500px" },
+                        height: { xs: "300px", sm: "400px", md: "360px" },
+                        margin: "auto",
+                        borderRadius: "20px",
+                        overflow: "visible",
+                        pt: "60px",
+                        boxShadow: "0 10px 30px rgba(250, 204, 194, 0.7)",
+                      }}
+                    >
+                      {/* Background Image Layer with Blur */}
+                      <Box
+                        component="img"
+                        src={image2}
+                        alt="Background"
+                        sx={{
+                          position: "absolute",
+                          top: 0,
+                          left: 0,
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "cover",
+                          // filter: "blur(10px)",
+                          borderRadius: "20px",
+                          zIndex: 0,
+                        }}
+                      />
+
+                      {/* Glass Layer with Gradient */}
+                      <Box
+                        sx={{
+                          position: "absolute",
+                          top: 0,
+                          left: 0,
+                          width: "100%",
+                          height: "100%",
+                          background: "rgba(255, 253, 253, 0.6)",
+                          backdropFilter: "blur(20px)",
+                          WebkitBackdropFilter: "blur(20px)",
+                          borderRadius: "20px",
+                          zIndex: 1,
+                        }}
+                      />
+
+                      {/* Foreground GIF or Image */}
+                      <Box
+                        component="img"
+                        src={item.src}
+                        alt="Video GIF"
+                        sx={{
+                          position: "relative",
+                          top: "-120px",
+                          width: "100%",
+                          height: "500px",
+                          objectFit: "cover",
+                          zIndex: 2,
+                          borderRadius: "20px",
+                        }}
+                      />
+                    </Box>
                   </Box>
                 </SwiperSlide>
               ))}

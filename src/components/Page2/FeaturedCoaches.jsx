@@ -15,6 +15,10 @@ import heroImg1 from "../../assets/featuredcoaches/image1.png";
 import heroImg2 from "../../assets/featuredcoaches/image2.png";
 import heroImg3 from "../../assets/featuredcoaches/image3.png";
 import heroImg4 from "../../assets/featuredcoaches/image4.png";
+import avatar1 from "../../assets/featuredcoaches/crop1.png";
+import avatar2 from "../../assets/featuredcoaches/crop2.png";
+import avatar3 from "../../assets/featuredcoaches/crop3.png";
+import avatar4 from "../../assets/featuredcoaches/crop4.png";
 import map from "../../assets/featuredcoaches/world-map.webp";
 
 const coaches = [
@@ -25,6 +29,7 @@ const coaches = [
       "Former Fortune 500 executive with 15+ years of transforming organizational culture.",
     tag: "CPCC ELITE PLUS",
     image: heroImg1,
+    avatar: avatar1,
   },
   {
     name: "Elena Petrov",
@@ -33,6 +38,7 @@ const coaches = [
       "Helping professionals navigate career pivots and achieve breakthrough success.",
     tag: "CPCC ELITE",
     image: heroImg2,
+    avatar: avatar2,
   },
   {
     name: "John Doe",
@@ -41,6 +47,7 @@ const coaches = [
       "Former Fortune 500 executive with 15+ years of transforming organizational culture.",
     tag: "CPCC ELITE",
     image: heroImg1,
+    avatar: avatar1,
   },
   {
     name: "Elena Petrov",
@@ -49,6 +56,7 @@ const coaches = [
       "Helping professionals navigate career pivots and achieve breakthrough success.",
     tag: "CPCC ELITE PLUS",
     image: heroImg2,
+    avatar: avatar2,
   },
   {
     name: "John Desuza",
@@ -57,6 +65,7 @@ const coaches = [
       "Integrating holistic wellness approaches with high-performance strategies.",
     tag: "CPCC ELITE",
     image: heroImg3,
+    avatar: avatar3,
   },
   {
     name: "John Doe",
@@ -65,6 +74,7 @@ const coaches = [
       "Former Fortune 500 executive with 15+ years of transforming organizational culture.",
     tag: "CPCC",
     image: heroImg1,
+    avatar: avatar1,
   },
   {
     name: "Elena Petrov",
@@ -73,6 +83,7 @@ const coaches = [
       "Helping professionals navigate career pivots and achieve breakthrough success.",
     tag: "CPCC",
     image: heroImg2,
+    avatar: avatar2,
   },
   {
     name: "John Desuza",
@@ -81,6 +92,7 @@ const coaches = [
       "Integrating holistic wellness approaches with high-performance strategies.",
     tag: "CPCC POWER",
     image: heroImg3,
+    avatar: avatar3,
   },
   {
     name: "Alexa John",
@@ -89,6 +101,7 @@ const coaches = [
       "Former Fortune 500 executive with 15+ years of transforming organizational culture.",
     tag: "CPCC",
     image: heroImg4,
+    avatar: avatar4,
   },
   {
     name: "John Doe",
@@ -97,6 +110,7 @@ const coaches = [
       "Former Fortune 500 executive with 15+ years of transforming organizational culture.",
     tag: "CPCC POWER",
     image: heroImg1,
+    avatar: avatar1,
   },
   {
     name: "Elena Petrov",
@@ -105,6 +119,7 @@ const coaches = [
       "Helping professionals navigate career pivots and achieve breakthrough success.",
     tag: "CPCC",
     image: heroImg2,
+    avatar: avatar2,
   },
   {
     name: "John Desuza",
@@ -113,6 +128,7 @@ const coaches = [
       "Integrating holistic wellness approaches with high-performance strategies.",
     tag: "CPCC POWER",
     image: heroImg3,
+    avatar: avatar3,
   },
   {
     name: "Alexa John",
@@ -121,23 +137,24 @@ const coaches = [
       "Former Fortune 500 executive with 15+ years of transforming organizational culture.",
     tag: "CPCC",
     image: heroImg4,
+    avatar: avatar4,
   },
 ];
 
 const avatarPositions = [
-  { top: "10%", left: "10%", coachIndex: 0 }, 
-  { top: "0%", left: "30%", coachIndex: 1 }, 
-  { top: "24%", left: "40%", coachIndex: 2 }, 
-  { top: "47%", left: "47%", coachIndex: 3 }, 
-  { top: "70%", left: "30%", coachIndex: 4 }, 
-  { top: "45%", left: "20%", coachIndex: 5 }, 
-  { top: "75%", left: "52%", coachIndex: 6 }, 
-  { top: "18%", left: "94%", coachIndex: 7 }, 
-  { top: "73%", left: "85%", coachIndex: 8 }, 
-  { top: "36%", left: "72%", coachIndex: 9 }, 
-  { top: "53%", left: "64%", coachIndex: 10 }, 
-  { top: "5%", left: "74%", coachIndex: 11 },  
-  { top: "22%", left: "59%", coachIndex: 12 }, 
+  { top: "10%", left: "10%", coachIndex: 0 },
+  { top: "0%", left: "30%", coachIndex: 1 },
+  { top: "24%", left: "40%", coachIndex: 2 },
+  { top: "47%", left: "47%", coachIndex: 3 },
+  { top: "70%", left: "30%", coachIndex: 4 },
+  { top: "45%", left: "20%", coachIndex: 5 },
+  { top: "75%", left: "52%", coachIndex: 6 },
+  { top: "18%", left: "94%", coachIndex: 7 },
+  { top: "73%", left: "85%", coachIndex: 8 },
+  { top: "36%", left: "72%", coachIndex: 9 },
+  { top: "53%", left: "64%", coachIndex: 10 },
+  { top: "5%", left: "74%", coachIndex: 11 },
+  { top: "22%", left: "59%", coachIndex: 12 },
 ];
 
 const tagGradients = {
@@ -222,12 +239,13 @@ const FeaturedCoaches = () => {
                   onClick={() => setSelectedCoach(avatar.coachIndex)}
                 >
                   <img
-                    src={coaches[avatar.coachIndex].image}
+                    src={coaches[avatar.coachIndex].avatar}
                     alt={`Coach ${index}`}
                     style={{
                       width: "100%",
                       height: "100%",
-                      objectFit: "cover",
+                      objectFit: "contain",
+                      background: "#F0EAE5",
                     }}
                   />
                 </Box>

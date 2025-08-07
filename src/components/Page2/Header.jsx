@@ -11,12 +11,13 @@ import {
   Menu,
   MenuItem,
   Typography,
+  IconButton,
 } from "@mui/material";
 import logo from "../../assets/logo.png";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import Grow from "@mui/material/Grow";
 import DotExpandButton from "./DotExpandButton";
-
+import SearchIcon from "@mui/icons-material/Search";
 const navItems1 = [
   { label: "Find A Coach", href: "#" },
   { label: "How it works", href: "#" },
@@ -67,7 +68,7 @@ const Header = () => {
               sx={{
                 display: "flex",
                 alignItems: "center",
-                gap: 6,
+                gap: 5.5,
               }}
             >
               {/* Coaching dropdown */}
@@ -179,6 +180,10 @@ const Header = () => {
                   {item.label}
                 </Link>
               ))}
+
+              <IconButton aria-label="search" size="small">
+                <SearchIcon fontSize="medium" color="black" />
+              </IconButton>
 
               <Box sx={{ display: "flex", gap: 2, width: "250px" }}>
                 <DotExpandButton text={"Login"} hoveredVal={false} />

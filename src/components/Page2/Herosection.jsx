@@ -32,81 +32,100 @@ const images = [
   {
     id: 1,
     src: pic1,
-    tag: "coach",
+    tag: "CPCC ELITE PLUS",
     name: "John Doe",
     role: "Executive Leadership Coach",
   },
   {
     id: 2,
     src: pic2,
-    tag: "coach",
+    tag: "CPCC ELITE",
     name: "Kai Petrov",
     role: "Career Transition Specialist",
   },
   {
     id: 3,
     src: pic3,
-    tag: "coach",
+    tag: "CPCC ELITE PLUS",
     name: "John Desuza",
     role: "Wellness & Performance Coach",
   },
   {
     id: 4,
     src: pic4,
-    tag: "coach",
+    tag: "CPCC ELITE PLUS",
     name: "Alex John",
     role: "Executive Leadership Coach",
   },
   {
     id: 5,
     src: pic5,
-    tag: "coach",
+    tag: "CPCC ELITE",
     name: "Steve Doe",
     role: "Executive Leadership Coach",
   },
   {
     id: 6,
     src: pic6,
-    tag: "coach",
+    tag: "CPCC ELITE PLUS",
     name: "Lim Petrov",
     role: "Career Transition Specialist",
   },
   {
     id: 7,
     src: pic7,
-    tag: "coach",
+    tag: "CPCC ELITE",
     name: "Mark Desuza",
     role: "Wellness & Performance Coach",
   },
   {
     id: 8,
     src: pic8,
-    tag: "coach",
+    tag: "CPCC ELITE PLUS",
     name: "Sam John",
     role: "Executive Leadership Coach",
   },
   {
     id: 9,
     src: pic9,
-    tag: "coach",
+    tag: "CPCC",
     name: "Jim John",
     role: "Wellness & Performance Coach",
   },
   {
     id: 10,
     src: pic10,
-    tag: "coach",
+    tag: "CPCC POWER",
     name: "Josh John",
     role: "Executive Leadership Coach",
   },
   {
     id: 11,
     src: pic11,
-    tag: "coach",
+    tag: "CPCC ELITE",
     name: "Josh John",
     role: "Wellness & Performance Coach",
   },
 ];
+
+const tagGradients = {
+  CPCC: {
+    background: "linear-gradient(to right, #45d1fcff, #1dfd28ff)",
+    color: "#fff",
+  },
+  "CPCC ELITE PLUS": {
+    background: "linear-gradient(to right, #fcb045, #fd1d1d)",
+    color: "#fff",
+  },
+  "CPCC ELITE": {
+    background: "linear-gradient(to right, #b24592, #f15f79)",
+    color: "#fff",
+  },
+  "CPCC POWER": {
+    background: "linear-gradient(to right, #36D1DC, #5B86E5)",
+    color: "#fff",
+  },
+};
 
 // MUI styled component for hero section
 const HeroContainer = styled(Box)(({ theme }) => ({
@@ -278,19 +297,23 @@ export default function Herosection() {
                 />
 
                 {/* Top-left Tag */}
+
                 <Box
                   sx={{
+                    mt: 0.8,
+                    borderRadius: "999px",
+                    px: 1.4,
+                    py: 0.3,
+                    fontSize: "0.75rem",
+                    display: "inline-block",
+                    fontWeight: 600,
+                    ...(tagGradients[img.tag] || {
+                      backgroundColor: "#e0e0e0",
+                      color: "#333",
+                    }),
                     position: "absolute",
                     top: 8,
                     left: 8,
-                    backgroundColor: "rgba(0, 0, 0, 0.6)",
-                    color: "#fff",
-                    fontSize: "0.75rem",
-                    fontWeight: 500,
-                    px: 1.5,
-                    py: 0.5,
-                    borderRadius: "4px",
-                    textTransform: "uppercase",
                   }}
                 >
                   {img.tag}

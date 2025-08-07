@@ -85,3 +85,18 @@ button:focus-visible {
     transform: translateY(0px);
   }
 }
+
+.swiper {
+  --swiper-pagination-color: #ff5722;
+  /* your desired color */
+}
+
+.swiper-pagination-bullet {
+  background: #e0e0e0;
+  /* inactive color */
+}
+
+.swiper-pagination-bullet-active {
+  background: #ff5722;
+  /* active color */
+}
