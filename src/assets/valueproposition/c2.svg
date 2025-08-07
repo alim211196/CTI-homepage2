@@ -1,0 +1,48 @@
+<svg width="228" height="90" viewBox="0 0 228 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="illustration">
+<g id="4">
+<rect id="background" x="11.3881" y="25.6377" width="44" height="44" rx="12" transform="rotate(15 11.3881 25.6377)" fill="#FDDB94"/>
+<g id="icon">
+<rect id="Rectangle-path" x="18.5792" y="45.1642" width="20" height="14" rx="2" transform="rotate(15 18.5792 45.1642)" stroke="#FAAF3F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Shape" d="M28.4787 62.3106L32.6198 46.8558C32.9057 45.7889 32.2725 44.6922 31.2056 44.4063L27.3419 43.371C26.275 43.0851 25.1783 43.7183 24.8924 44.7852L20.7513 60.2401" stroke="#FAAF3F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+<g id="3">
+<path id="Rectangle" d="M29.9444 25.0623C29.9444 18.7219 35.0843 13.582 41.4247 13.582V13.582C64.9077 13.582 83.9444 32.6187 83.9444 56.1017V67.582H56.9444C42.0327 67.582 29.9444 55.4937 29.9444 40.582V25.0623Z" fill="#EEF3F9"/>
+<g id="icon_2">
+<path id="Shape_2" d="M66.9444 40.652V41.582C66.9419 46.0107 64.0267 49.9103 59.7797 51.1659C55.5328 52.4216 50.9658 50.7344 48.5553 47.0191C46.1449 43.3039 46.4653 38.4457 49.3427 35.0791C52.2201 31.7125 56.9691 30.6396 61.0144 32.442" stroke="#0B409C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Shape_3" d="M67.9444 32.582L56.9444 43.582L53.9444 40.582" stroke="#0B409C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+<g id="2">
+<circle id="Oval" cx="162.944" cy="30.582" r="21" fill="#0B409C"/>
+<g id="eye">
+<path id="Shape_4" opacity="0.9" fill-rule="evenodd" clip-rule="evenodd" d="M151.944 30.582C151.944 30.582 155.944 22.582 162.944 22.582C169.944 22.582 173.944 30.582 173.944 30.582C173.944 30.582 169.944 38.582 162.944 38.582C155.944 38.582 151.944 30.582 151.944 30.582Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<circle id="Oval_2" opacity="0.9" cx="162.944" cy="30.582" r="3" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+<g id="5">
+<rect id="background_2" x="167.892" y="44.5294" width="44" height="44" rx="12" transform="rotate(-30 167.892 44.5294)" fill="#BC964A"/>
+<g id="icon_3" opacity="0.9">
+<path id="Shape_5" fill-rule="evenodd" clip-rule="evenodd" d="M194.676 42.9218L200.141 44.3859L196.114 59.4121L192.65 61.4121L190.65 57.948L194.676 42.9218V42.9218Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Shape_6" d="M195.15 65.7423L210.739 56.7423" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+<g id="1">
+<g id="background_3">
+<rect id="background_4" x="65.3624" y="26.5697" width="68" height="68" rx="18" transform="rotate(-23 65.3624 26.5697)" fill="#FEAE06"/>
+</g>
+<g id="icon_4">
+<circle id="Oval_3" cx="98.3553" cy="54.3899" r="1.5" transform="rotate(-23 98.3553 54.3899)" fill="black"/>
+<path id="Shape_7" d="M106.401 43.9132L90.7528 50.5557" stroke="#152647" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Shape_8" d="M107.938 55.211L99.6534 58.7275" stroke="#152647" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Shape_9" d="M118.176 56.2969L98.8456 64.5023C98.3675 64.7804 97.7877 64.8219 97.2748 64.6147C96.762 64.4075 96.3738 63.9749 96.2231 63.4427L90.7528 50.5556" stroke="#152647" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Shape_10" d="M89.1899 46.8736C88.9114 45.8605 89.3454 44.7864 90.2495 44.2511L103.137 38.7809" stroke="#152647" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Shape_11" d="M123.699 53.9525C118.12 53.6049 108.033 48.5764 103.136 38.7809L112.368 27.2579" stroke="#152647" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Shape_12" d="M126.921 28.2722L112.368 27.2579" stroke="#152647" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Shape_13" d="M123.699 53.9526C126.869 50.2607 129.599 41.4647 128.029 32.4949" stroke="#152647" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Shape_14" d="M112.368 27.2579L123.699 53.9526" stroke="#152647" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+</g>
+</svg>
