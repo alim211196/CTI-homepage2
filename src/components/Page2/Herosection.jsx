@@ -164,10 +164,8 @@ export default function Herosection() {
           mx="auto"
           gutterBottom
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore. Lorem ipsum dolor sit amet,
-          consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-          labore.
+          Transform Your Organization Through Coaching Excellence. 
+          <br/> Connect with world-class certified coaches and unlock your team's potential. 
         </Typography>
         <Box
           mt={4}
