@@ -197,9 +197,9 @@ const FeaturedCoaches = () => {
         >
           <Box display="flex" alignItems="center">
             <Typography variant="h4" fontWeight={700} mr={1}>
-              Coaches Around
+              Coaches Around 
             </Typography>
-            <SectionHeading title="The World" subtitle="" />
+            <SectionHeading title=" GCC Region" subtitle="" />
           </Box>
 
           <Button

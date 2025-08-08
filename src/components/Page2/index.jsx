@@ -13,6 +13,7 @@ import Newsletter from "./Newsletter";
 import OrganizationCTA from "../OrganizationCTA";
 import GetStartedCard from "../GetStartedCard";
 import CoachesTraining from "./CoachesTraining";
+import CoachMatch from "./CoachMatch";
 
 const Homepage = () => {
   return (
@@ -23,9 +24,10 @@ const Homepage = () => {
 
       <AboutUs />
       <GetStartedCard />
-      <Features />
+      {/* <Features /> */}
+      <CoachMatch />
       <ValueProposition />
-      <CoachesTraining />
+      {/* <CoachesTraining /> */}
       <FeaturedCoaches />
       <OrganizationCTA />
       <Testimonials />

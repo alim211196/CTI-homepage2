@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Box, Typography, Button, Container, Grid } from "@mui/material";
 import { styled } from "@mui/system";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -134,6 +134,8 @@ const HeroContainer = styled(Box)(({ theme }) => ({
 }));
 
 export default function Herosection() {
+  const swiperRef = useRef(null);
+
   return (
     <Box
       sx={{
@@ -164,8 +166,9 @@ export default function Herosection() {
           mx="auto"
           gutterBottom
         >
-          Transform Your Organization Through Coaching Excellence. 
-          <br/> Connect with world-class certified coaches and unlock your team's potential. 
+          Transform Your Organization Through Coaching Excellence.
+          <br /> Connect with world-class certified coaches and unlock your
+          team's potential.
         </Typography>
         <Box
           mt={4}
@@ -240,10 +243,10 @@ export default function Herosection() {
           grabCursor={true}
           centeredSlides={true}
           slidesPerView="auto"
-          loop={true} // ✅ Enables infinite loop
+          loop={true}
           autoplay={{
-            delay: 3000, // ✅ Delay between slides (in ms)
-            disableOnInteraction: false, // ✅ Keeps autoplay after user interaction
+            delay: 3000,
+            disableOnInteraction: false,
           }}
           initialSlide={4}
           coverflowEffect={{
@@ -253,7 +256,8 @@ export default function Herosection() {
             modifier: 1,
             slideShadows: true,
           }}
-          modules={[EffectCoverflow, Autoplay]} // ✅ Add Autoplay here
+          modules={[EffectCoverflow, Autoplay]}
+          onSwiper={(swiper) => (swiperRef.current = swiper)} // Capture the swiper instance
           style={{
             width: "100%",
             paddingTop: "50px",
@@ -272,6 +276,8 @@ export default function Herosection() {
                 alignItems: "center",
                 justifyContent: "center",
               }}
+              onMouseEnter={() => swiperRef.current?.autoplay?.stop()} // Stop on hover
+              onMouseLeave={() => swiperRef.current?.autoplay?.start()} // Resume on leave
             >
               <Box
                 sx={{
@@ -282,7 +288,6 @@ export default function Herosection() {
                   overflow: "hidden",
                 }}
               >
-                {/* Image */}
                 <img
                   src={img.src}
                   alt={`slide-${img.id}`}
@@ -293,9 +298,6 @@ export default function Herosection() {
                     display: "block",
                   }}
                 />
-
-                {/* Top-left Tag */}
-
                 <Box
                   sx={{
                     mt: 0.8,
@@ -316,8 +318,6 @@ export default function Herosection() {
                 >
                   {img.tag}
                 </Box>
-
-                {/* Bottom Overlay */}
                 <Box
                   sx={{
                     position: "absolute",
@@ -330,7 +330,7 @@ export default function Herosection() {
                     py: 1.5,
                     display: "flex",
                     flexDirection: "column",
-                    alignItems: "flex-start", // Align to the left
+                    alignItems: "flex-start",
                     textAlign: "left",
                   }}
                 >
