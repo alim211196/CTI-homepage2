@@ -20,6 +20,7 @@ import avatar2 from "../../assets/featuredcoaches/crop2.png";
 import avatar3 from "../../assets/featuredcoaches/crop3.png";
 import avatar4 from "../../assets/featuredcoaches/crop4.png";
 import map from "../../assets/featuredcoaches/world-map.webp";
+import SectionHeading from "../Common/SectionHeading";
 
 const coaches = [
   {
@@ -194,9 +195,13 @@ const FeaturedCoaches = () => {
           alignItems="center"
           mb={8}
         >
-          <Typography variant="h4" fontWeight={700}>
-            Featured Coaches
-          </Typography>
+          <Box display="flex" alignItems="center">
+            <Typography variant="h4" fontWeight={700} mr={1}>
+              Coaches Around
+            </Typography>
+            <SectionHeading title="The World" subtitle="" />
+          </Box>
+
           <Button
             endIcon={<ArrowForwardIcon />}
             sx={{

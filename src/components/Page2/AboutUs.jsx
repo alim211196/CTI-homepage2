@@ -88,13 +88,11 @@ export default function AboutUs() {
                     About Us
                   </MotionTypography>
                   <Typography variant="h6" fontWeight={600} gutterBottom>
-                    Lorem ipsum dolor sit amet consectetur
+                    We represents a commitment to excellence in coaching.
                   </Typography>
 
                   <Typography variant="body1" color="black" mb={4}>
-                    Consectetur adipiscing elit, sed do eiusmod tempor
-                    incididunt ut labore. Lorem ipsum dolor sit amet
-                    consectetur. Lorem ipsum dolor sit amet consectetur
+                    We are dedicated to fostering transformational growth through the power of Co-Active coaching principles across the Dubai and GCC region.
                   </Typography>
                   {faqs_content.map((faq, idx) => (
                     <Accordion

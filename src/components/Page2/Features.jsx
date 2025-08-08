@@ -35,7 +35,7 @@ const itemsData = [
     imgSrc: image5,
   },
   {
-    title: "Get Blood Pressure Insights",
+    title: "Get Coaching Insights",
     imgSrc: image6,
   },
 ];
